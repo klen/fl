@@ -20,7 +20,6 @@ export function DungeonInfo({ dungeon }: { dungeon: Dungeon }) {
         </Text>
         <Text>
           Строитель подземелья: {dungeon.creator}
-          {dungeon.createReason && <Text span>, причина: {dungeon.createReason}</Text>}
         </Text>
         {dungeon.createReason && <Text>Причина строительства: {dungeon.createReason}</Text>}
         <Text>История подземелья: {dungeon.history}</Text>
