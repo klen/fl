@@ -45,7 +45,7 @@ jobs:
         uses: docker/build-push-action@master
         with:
           context: .
-          file: devops/Dockerfile
+          file: assets/Dockerfile
           push: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
