@@ -27,3 +27,13 @@ export function parseTable(data: string) {
   })
   return table
 }
+
+export function generateName(
+  table: TTableItem<{ name: string; adj1: string; adj2: string; sex: number }>[],
+  roll66: () => number
+) {
+  const n1 = selectFromTable(table, roll66()) as (typeof table)[number]["data"]
+  const n2 = selectFromTable(table, roll66()) as (typeof table)[number]["data"]
+
+  return `${n2[n1.sex ? "adj2" : "adj1"]} ${n1["name"]}`
+}

@@ -1,4 +1,6 @@
-import { beastTable, selectFromTable } from "@/data"
+import { beastTable } from "../beasts"
+import { Item } from "../proto"
+import { generateName, selectFromTable } from "../utils"
 import {
   castleAgeTable,
   castleCreatorTable,
@@ -10,9 +12,7 @@ import {
   castleStateTable,
   castleTypesTable,
   castleWeirdTable,
-} from "@/data/places"
-import { Item } from "../generate"
-import { generateName } from "./utils"
+} from "./data"
 
 export class Castle extends Item {
   name: string

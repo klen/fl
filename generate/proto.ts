@@ -1,7 +1,6 @@
-import { choiceFromTable } from "@/data"
 import { TDice, TTableItem } from "@/types"
-import { rollDice } from "./dices"
-import { mulberry32 } from "./random"
+import { mulberry32, rollDice } from "@/utils"
+import { choiceFromTable } from "./utils"
 
 export class Item {
   random: () => number

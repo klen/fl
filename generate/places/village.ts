@@ -1,4 +1,6 @@
-import { selectFromTable } from "@/data"
+import { roll } from "@/utils"
+import { Item } from "../proto"
+import { generateName, selectFromTable } from "../utils"
 import {
   villageAges,
   villageDangers,
@@ -8,11 +10,8 @@ import {
   villageNames,
   villageTypes,
   villageWeirds,
-} from "@/data/places"
-import { roll } from "../dices"
-import { Item } from "../generate"
+} from "./data"
 import { Inn } from "./inn"
-import { generateName } from "./utils"
 
 export class Village extends Item {
   name: string

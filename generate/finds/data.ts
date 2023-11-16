@@ -1,4 +1,4 @@
-import { parseTable } from "./utils"
+import { parseTable } from "../utils"
 
 const findTypeData = `
 range;type;desc

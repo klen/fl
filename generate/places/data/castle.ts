@@ -1,6 +1,6 @@
 import { TTableItem } from "@/types"
 import { parseInt } from "lodash"
-import { parseTable } from "../utils"
+import { parseTable } from "../../utils"
 
 const castleTypesData = `
 range;type;size;pop

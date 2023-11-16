@@ -1,8 +1,8 @@
 "use client"
 
-import { selectFromTable } from "@/data"
-import * as data from "@/data/places"
-import { Castle, Dungeon, Village, mulberry32, rollDice } from "@/utils"
+import { Castle, Dungeon, Village, selectFromTable } from "@/generate"
+import { placeTypesTable } from "@/generate/places/data"
+import { mulberry32, rollDice } from "@/utils"
 import { FLPaper } from "../layouts"
 import { CastleInfo } from "./CastleInfo"
 import { DungeonInfo } from "./DungeonInfo"
@@ -11,7 +11,7 @@ import { VillageInfo } from "./VillageInfo"
 export function Place({ seed }: { seed: number }) {
   const random = mulberry32(seed)
   const typeRoll = rollDice("d6", random)
-  const placeType = selectFromTable(data.placeTypesTable, typeRoll)
+  const placeType = selectFromTable(placeTypesTable, typeRoll)
 
   return (
     <FLPaper pb="xl">

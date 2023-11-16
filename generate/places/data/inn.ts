@@ -1,5 +1,5 @@
 import { TTableItem } from "@/types"
-import { parseTable } from "../utils"
+import { parseTable } from "../../utils"
 
 const innNameDate = `
 range;name;adj1;adj2;sex

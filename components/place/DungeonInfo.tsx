@@ -1,4 +1,4 @@
-import { Dungeon } from "@/utils"
+import { Dungeon } from "@/generate"
 import { Box, Group, List, Stack, Text, Title } from "@mantine/core"
 import { useTranslation } from "react-i18next"
 

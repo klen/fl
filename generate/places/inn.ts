@@ -1,7 +1,6 @@
-import { selectFromTable } from "@/data"
-import { innFeaturesTable, innTable } from "@/data/places/inn"
-import { Item } from "../generate"
-import { generateName } from "./utils"
+import { Item } from "../proto"
+import { generateName, selectFromTable } from "../utils"
+import { innFeaturesTable, innTable } from "./data"
 
 export class Inn extends Item {
   name: string

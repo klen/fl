@@ -1,5 +1,5 @@
 import { TTableItem } from "@/types"
-import { parseTable } from "../utils"
+import { parseTable } from "../../utils"
 
 const dungeonAgeData = `
 range;type;age

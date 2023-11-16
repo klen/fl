@@ -1,4 +1,4 @@
-import { Find } from "@/utils"
+import { Find } from "@/generate"
 import { Stack, Text, Title } from "@mantine/core"
 import { MoneyLine } from "../common"
 import { FLPaper } from "../layouts"

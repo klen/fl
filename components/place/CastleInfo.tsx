@@ -1,4 +1,4 @@
-import { Castle } from "@/utils"
+import { Castle } from "@/generate"
 import { Box, Group, List, Stack, Text, Title } from "@mantine/core"
 import capitalize from "lodash/capitalize"
 import { useTranslation } from "react-i18next"

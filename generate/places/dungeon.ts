@@ -1,4 +1,5 @@
-import { selectFromTable } from "@/data"
+import { Item } from "../proto"
+import { selectFromTable } from "../utils"
 import {
   dungeonAgeTable,
   dungeonCreatorsTableData,
@@ -8,8 +9,7 @@ import {
   dungeonPopulationTableData,
   dungeonSizeTableData,
   dungeonWeirdTableData,
-} from "@/data/places"
-import { Item } from "../generate"
+} from "./data"
 
 export class Dungeon extends Item {
   age: number

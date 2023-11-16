@@ -1,4 +1,5 @@
-import { selectFromTable } from "@/data"
+import { Item } from "../proto"
+import { selectFromTable } from "../utils"
 import {
   findCarriedSimpleTable,
   findCarriedValuedTable,
@@ -8,8 +9,7 @@ import {
   findRarityTable,
   findTypeTable,
   findWeirdnessTable,
-} from "@/data/finds"
-import { Item } from "../generate"
+} from "./data"
 
 export class Find extends Item {
   type: string
