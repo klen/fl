@@ -1,5 +1,9 @@
-import { Container, Title } from "@mantine/core";
+import { Container, Title } from "@mantine/core"
 
 export default function Page() {
-  return <Container p='xl'><Title>Запретные земли</Title></Container>;
+  return (
+    <Container p="xl">
+      <Title>Запретные земли</Title>
+    </Container>
+  )
 }

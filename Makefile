@@ -14,6 +14,10 @@ lint: node_modules
 	yarn lint
 	yarn tsc --noEmit --pretty
 
+.PHONY: test
+test: node_modules
+	yarn jest
+
 .PHONY: build
 build: node_modules
 	yarn build

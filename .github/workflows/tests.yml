@@ -1,0 +1,33 @@
+name: Tests
+run-name: "[Tests]: ${{ github.event.head_commit.message }}"
+
+on:
+  pull_request:
+    branches: [main, release, develop]
+
+  push:
+    branches: [main, release, develop]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout changes
+      uses: actions/checkout@main
+
+    - name: Set up Node.JS
+      uses: actions/setup-node@main
+      with:
+        cache: yarn
+
+    - name: Setup dependencies
+      run: yarn
+
+    - name: Lint code
+      run: |
+          yarn lint
+          yarn tsc --noEmit --pretty
+
+    - name: Run tests
+      run: yarn jest

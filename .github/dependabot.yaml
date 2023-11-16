@@ -1,0 +1,13 @@
+version: 2
+updates:
+
+  # Maintain dependencies for Javascript
+  - package-ecosystem: npm
+    directory: /
+    labels:
+      - dependencies
+    schedule:
+      interval: monthly
+    allow:
+    - dependency-type: direct
+    - dependency-type: production
