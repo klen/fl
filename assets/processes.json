@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "name": "web",
+      "script": "./server.js",
+      "merge_logs": true,
+      "max_restarts": 10,
+      "instances": 4,
+      "max_memory_restart": "300M",
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": "80"
+      }
+    }
+  ]
+}
