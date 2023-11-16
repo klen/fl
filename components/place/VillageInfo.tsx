@@ -1,4 +1,4 @@
-import { Village } from "@/utils"
+import { Village } from "@/generate"
 import { Box, Group, Stack, Text, Title } from "@mantine/core"
 
 export function VillageInfo({ village }: { village: Village }) {

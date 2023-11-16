@@ -12,6 +12,7 @@ import {
 import "@mantine/core/styles.css"
 import { Metadata } from "next"
 import { headers } from "next/headers"
+import Link from "next/link"
 import "styles/global.css"
 import "styles/rpg-awesome.css"
 import { theme } from "../theme"
@@ -59,7 +60,9 @@ export default function RootLayout({ children }: { children: any }) {
               style={{ borderBottom: "2px solid var(--mantine-color-dark-9)" }}
             >
               <Group h="100%">
-                <Title order={2}>Запретные земли</Title>
+                <Link href="/" style={{ textDecoration: "none", color: "#000" }}>
+                  <Title order={2}>Запретные земли</Title>
+                </Link>
                 <Group mx="auto">
                   <Anchor href="/place" fw={pathname.startsWith("/place") ? 600 : 400}>
                     Места

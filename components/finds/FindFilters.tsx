@@ -1,3 +1,5 @@
+"use client"
+
 import { dice66ToRolls, getSeed, mulberry32, rollDice, useHash } from "@/utils"
 import { Center, Checkbox, Group, Stack, Text } from "@mantine/core"
 import capitalize from "lodash/capitalize"
