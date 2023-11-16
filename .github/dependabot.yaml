@@ -11,3 +11,6 @@ updates:
     allow:
     - dependency-type: direct
     - dependency-type: production
+    ignore:
+    - dependency-name: "*"
+      update-types: ["version-update:semver-patch", "version-update:semver-minor"]
