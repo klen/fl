@@ -38,6 +38,12 @@ export default function Page() {
               </Link>
             </Text>
           </Stack>
+          <Text>
+            Исходный код проекта доступен на{" "}
+            <Link target="_blank" href="https://github.com/klen/fl">
+              GitHub
+            </Link>
+          </Text>
         </Stack>
       </FLPaper>
     </ClientSide>

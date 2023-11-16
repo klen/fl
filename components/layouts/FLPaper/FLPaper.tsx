@@ -10,7 +10,7 @@ export function FLPaper({ children, ...props }: PropsWithChildren<PaperProps>) {
   }, [children])
 
   return (
-    <Paper className={classes.FLPaper} mah={500} ref={ref} {...props}>
+    <Paper className={classes.FLPaper} mah={700} ref={ref} {...props}>
       {children}
     </Paper>
   )
