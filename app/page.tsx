@@ -15,7 +15,7 @@ export default function Page() {
             <Title order={2}>Возможности</Title>
             <List>
               <List.Item>
-                Генерация <Link href="/find">находок</Link>
+                Генерация <Link href="/finds">находок</Link>
               </List.Item>
               <List.Item>
                 Генерация <Link href="/place">точек интереса</Link>
