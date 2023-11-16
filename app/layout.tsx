@@ -1,5 +1,3 @@
-"use client"
-
 import {
   Anchor,
   AppShell,
@@ -12,13 +10,36 @@ import {
   Title,
 } from "@mantine/core"
 import "@mantine/core/styles.css"
-import { usePathname } from "next/navigation"
+import { Metadata } from "next"
+import { headers } from "next/headers"
 import "styles/global.css"
 import "styles/rpg-awesome.css"
 import { theme } from "../theme"
 
+export const metadata: Metadata = {
+  title: "Запретные земли",
+  description: "Генератор мест для НРИ Запретные земли",
+  referrer: "origin-when-cross-origin",
+  keywords: [
+    "Forbidden lands",
+    "Запретные земли",
+    "НРИ",
+    "Генератор",
+    "Генератор мест",
+    "Генератор мест Запретные земли",
+  ],
+  creator: "Kirill Klenov",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+}
+
 export default function RootLayout({ children }: { children: any }) {
-  const pathname = usePathname()
+  const headersList = headers()
+  const pathname = headersList.get("x-next-pathname") || ""
+  console.log(999, pathname)
 
   return (
     <html lang="en">
