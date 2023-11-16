@@ -1,0 +1,6 @@
+/.next
+/.node-version
+/.swc
+/_
+/node_modules
+.DS_Store

@@ -1,0 +1,4 @@
+.Paper {
+  box-shadow: 0 0 10px 5px #fff;
+  border: 1px solid var(--mantine-color-dark-9);
+}
