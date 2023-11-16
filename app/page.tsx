@@ -1,9 +1,5 @@
-import { Container, Title } from "@mantine/core"
+import { redirect } from "next/navigation"
 
 export default function Page() {
-  return (
-    <Container p="xl">
-      <Title>Запретные земли</Title>
-    </Container>
-  )
+  return redirect("/place")
 }

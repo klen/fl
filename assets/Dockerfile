@@ -1,5 +1,7 @@
 FROM node:18-alpine AS base
 
+RUN yarn global add pm2
+
 # Install dependencies only when needed
 FROM base AS deps
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
@@ -47,6 +49,7 @@ RUN chown nextjs:nodejs .next
 # https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder /app/assets ./assets
 USER nextjs
 
 EXPOSE 80
@@ -55,4 +58,4 @@ ENV PORT 80
 
 HEALTHCHECK --interval=1m --timeout=5s --start-period=30s --retries=3 CMD curl -f localhost:$PORT || exit 1
 
-CMD ["pm2-runtime", "start", "assets/processes.json"]
+CMD npm run production

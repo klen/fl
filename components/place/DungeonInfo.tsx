@@ -18,9 +18,7 @@ export function DungeonInfo({ dungeon }: { dungeon: Dungeon }) {
         <Text>
           Размер: {dungeon.sizeDesc} ({dungeon.size} ком.)
         </Text>
-        <Text>
-          Строитель подземелья: {dungeon.creator}
-        </Text>
+        <Text>Строитель подземелья: {dungeon.creator}</Text>
         {dungeon.createReason && <Text>Причина строительства: {dungeon.createReason}</Text>}
         <Text>История подземелья: {dungeon.history}</Text>
         <Text>Вход в подземелье: {dungeon.entrance}</Text>
