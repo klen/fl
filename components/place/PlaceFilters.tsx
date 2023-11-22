@@ -31,7 +31,7 @@ export function PlaceFilters({ seed }: { seed: number }) {
           }
         }}
       >
-        <Group wrap="nowrap" gap="lg">
+        <Group gap="lg">
           <Checkbox
             label={capitalize(t("village"))}
             checked={enabled[0]}

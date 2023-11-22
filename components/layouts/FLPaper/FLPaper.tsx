@@ -1,3 +1,5 @@
+"use client"
+
 import { Paper, PaperProps } from "@mantine/core"
 import { PropsWithChildren, useEffect, useRef } from "react"
 import classes from "./styles.module.css"
@@ -10,7 +12,7 @@ export function FLPaper({ children, ...props }: PropsWithChildren<PaperProps>) {
   }, [children])
 
   return (
-    <Paper className={classes.FLPaper} mah={700} ref={ref} {...props}>
+    <Paper mah={700} ref={ref} {...props} className={classes.FLPaper}>
       {children}
     </Paper>
   )

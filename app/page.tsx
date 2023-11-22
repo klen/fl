@@ -2,6 +2,7 @@
 
 import { FLPaper } from "@/components"
 import ClientSide from "@/components/layouts/ClientSide"
+import { version } from "@/utils/env"
 import { List, Stack, Text, Title } from "@mantine/core"
 import Link from "next/link"
 
@@ -10,7 +11,7 @@ export default function Page() {
     <ClientSide>
       <FLPaper>
         <Stack gap="lg">
-          <Title>Генератор случайного контента для НРИ "Запретные земли"</Title>
+          <Title>Генераторы для НРИ "Запретные земли" ({version})</Title>
           <Stack gap="xs">
             <Title order={2}>Возможности</Title>
             <List>

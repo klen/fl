@@ -46,7 +46,7 @@ export function FindFilters({ seed }: { seed: number }) {
         }}
       >
         <Stack>
-          <Group wrap="nowrap" gap="lg">
+          <Group gap="lg">
             <Text>{t("Location")}:</Text>
             <Checkbox
               label={capitalize(t("Carried"))}
@@ -59,7 +59,7 @@ export function FindFilters({ seed }: { seed: number }) {
               onChange={(e) => setTypeEnabled([typeEnabled[0], e.target.checked])}
             />
           </Group>
-          <Group wrap="nowrap" gap="lg">
+          <Group gap="lg">
             <Text>{t("Value")}:</Text>
             <Checkbox
               label={capitalize(t("Simple"))}

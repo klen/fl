@@ -9,7 +9,7 @@ export function RollBlock({
   ...props
 }: PropsWithChildren<{ rolls: number[]; onRoll: () => void } & ButtonProps>) {
   return (
-    <Paper px="lg" py="xl" pos="relative">
+    <Paper px="lg" py="lg" pb="xl" pos="relative">
       {children}
       <Center pos="absolute" bottom={-20} right={0} left={0}>
         <DiceButton size="sm" rolls={rolls} onClick={() => onRoll()} {...props} />
