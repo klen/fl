@@ -23,7 +23,7 @@ export const dungeonAgeTable: TTableItem<{ type: string; age: [number, number] }
 const dungeonSizeTable = `
 range;type;size
 1-2;Маленькое;1-6
-3-4;Среднее;1-18
+3-4;Среднее;3-18
 5;Большое;14-34
 6;Огромное;56-86
 `.trim()
