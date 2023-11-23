@@ -11,7 +11,7 @@ export class Demon extends Item {
   empathy: number
   armor: number
   effect: string
-  features: { feature: string; desc: string }[]
+  features: { feature: string; desc: string; modifier: string }[]
 
   skills: { name: string; level: number }[]
 
@@ -32,6 +32,12 @@ export class Demon extends Item {
     }`
 
     this.features = this.genFeatures()
+    this.features.forEach((f) => {
+      if (f.modifier) {
+        const [key, value] = f.modifier.split(":")
+        this[key] += this.rollDices(value)
+      }
+    })
     this.skills = skills.map((s) => ({
       name: s,
       level: this.rollDice("d6") - 1,
@@ -46,14 +52,8 @@ export class Demon extends Item {
     while (features.length <= max) {
       feature = selectFromTable(demonFeatures, this.rollDice("d66"))
       if (features.find((f) => f.feature == feature.feature)) continue
-
       features.push(feature)
-      if (feature.modifier) {
-        const [key, value] = feature.modifier.split(":")
-        this[key] += this.rollDices(value)
-      }
     }
-
     return features.slice(1)
   }
 }
