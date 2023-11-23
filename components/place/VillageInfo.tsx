@@ -1,5 +1,6 @@
 import { Village } from "@/generate"
-import { Box, Group, Stack, Text, Title } from "@mantine/core"
+import { Stack, Text, Title } from "@mantine/core"
+import { AppList } from "../ui"
 
 export function VillageInfo({ village }: { village: Village }) {
   return (
@@ -20,20 +21,10 @@ export function VillageInfo({ village }: { village: Village }) {
         {<Text>Черта поселения: {village.feature}</Text>}
         {<Text>Странность поселения: {village.weird}</Text>}
       </Stack>
-      {village.houses.length == 0 ? null : (
-        <Box>
-          <Group gap="xs">
-            <i className="ra ra-capitol ra-lg" />
-            <Title order={3}>Здания</Title>
-          </Group>
-          <ul>
-            {village.houses.map((h: any, idx) => (
-              <li key={idx}>
-                <Text>{h}</Text>
-              </li>
-            ))}
-          </ul>
-        </Box>
+      {village.houses.length > 0 && (
+        <AppList title="Здания" icon={<i className="ra ra-capitol ra-lg" />}>
+          {village.houses}
+        </AppList>
       )}
     </Stack>
   )

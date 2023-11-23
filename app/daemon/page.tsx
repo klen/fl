@@ -1,10 +1,8 @@
 "use client"
-
+import { DemonInfo, RollBlock } from "@/components"
 import ClientSide from "@/components/layouts/ClientSide"
-import { Place, PlaceFilters } from "@/components/place"
 import { getSeed, useHash } from "@/utils"
 import { Stack } from "@mantine/core"
-import { parseInt } from "lodash"
 import { useEffect } from "react"
 
 export default function Page() {
@@ -15,13 +13,11 @@ export default function Page() {
   }, [hash])
 
   return (
-    <ClientSide>
-      {hash && (
-        <Stack>
-          <PlaceFilters seed={parseInt(hash)} />
-          <Place seed={parseInt(hash)} mt="xl" />
-        </Stack>
-      )}
-    </ClientSide>
+    <Stack>
+      <RollBlock rolls={[6]} onRoll={() => setHash(`${getSeed()}`)} />
+      <ClientSide>
+        <DemonInfo seed={parseInt(hash)} mt="xl" />
+      </ClientSide>
+    </Stack>
   )
 }

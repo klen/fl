@@ -17,4 +17,21 @@ export const rollDice = (type: TDice, random = Math.random) => {
   return dice ? dice(random) : 0
 }
 
+// parse roll like 2d6+4
+export const parseRoll = (roll: string) => {
+  const [dice, mod] = roll.split("+")
+  const [amount, type] = dice.split("d").map(Number)
+  return { amount: amount || 1, type, mod: mod ? Number(mod) : 0 }
+}
+
+export const rollDices = (desc: string, random = Math.random) => {
+  const { amount, type, mod } = parseRoll(desc)
+  if (!type) return mod
+
+  const diceType = `d${type}` as TDice
+  return amount > 1
+    ? rollMultiple(diceType, amount, random).reduce((a, b) => a + b, mod)
+    : mod + rollDice(diceType, random)
+}
+
 export const dice66ToRolls = (n: number) => [Math.floor(n / 10), n % 10]

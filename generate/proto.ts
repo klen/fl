@@ -1,5 +1,5 @@
 import { TDice, TTableItem } from "@/types"
-import { mulberry32, rollDice } from "@/utils"
+import { mulberry32, rollDice, rollDices } from "@/utils"
 import { choiceFromTable } from "./utils"
 
 export class Item {
@@ -13,6 +13,10 @@ export class Item {
 
   rollDice(type: TDice) {
     return rollDice(type, this.random)
+  }
+
+  rollDices(desc: string) {
+    return rollDices(desc, this.random)
   }
 
   randomFromRange(range: [number, number]) {

@@ -1,4 +1,5 @@
 export * from "./beasts"
+export * from "./demon"
 export * from "./finds"
 export * from "./places"
 export * from "./utils"

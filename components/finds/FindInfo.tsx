@@ -1,12 +1,12 @@
 import { Find } from "@/generate"
-import { Stack, Text, Title } from "@mantine/core"
+import { PaperProps, Stack, Text, Title } from "@mantine/core"
 import { MoneyLine } from "../common"
 import { FLPaper } from "../layouts"
 
-export function FindInfo({ seed }: { seed: number }) {
+export function FindInfo({ seed, ...props }: { seed: number } & PaperProps) {
   const find = new Find(seed)
   return (
-    <FLPaper pb="xl">
+    <FLPaper pb="xl" {...props}>
       <Stack gap="xs">
         <Title>
           <i className="ra  ra-diamond" style={{ marginRight: 8 }} />

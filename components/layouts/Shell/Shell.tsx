@@ -59,6 +59,12 @@ export function Shell({ children }: PropsWithChildren) {
           active={pathname.startsWith("/finds")}
           leftSection={<i className="ra ra-diamond" />}
         />
+        <NavLink
+          href="/daemon"
+          label="Демоны"
+          active={pathname.startsWith("/daemon")}
+          leftSection={<i className="ra ra-tentacle" />}
+        />
         {!sm && <Divider mt="auto" />}
         <NavLink
           href="/"

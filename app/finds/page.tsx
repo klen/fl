@@ -3,7 +3,7 @@
 import { FindFilters, FindInfo } from "@/components"
 import ClientSide from "@/components/layouts/ClientSide"
 import { getSeed, useHash } from "@/utils"
-import { Space, Stack } from "@mantine/core"
+import { Stack } from "@mantine/core"
 import { useEffect } from "react"
 
 export default function Page() {
@@ -18,8 +18,7 @@ export default function Page() {
       {hash && (
         <Stack>
           <FindFilters seed={parseInt(hash)} />
-          <Space h="xl" />
-          <FindInfo seed={parseInt(hash)} />
+          <FindInfo seed={parseInt(hash)} mt="xl" />
         </Stack>
       )}
     </ClientSide>
