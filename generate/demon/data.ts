@@ -1,3 +1,4 @@
+import { TTableItem } from "@/types"
 import { parseTable } from "../utils"
 
 const demonFormData = `
@@ -20,17 +21,25 @@ range;form;strength;agility;wits;empathy;armor;effect
 66-66;Тень;4-9;3;3;3;0-0;Неуязвим для физического оружия
 `.trim()
 
-export const demonForm = parseTable(demonFormData).map((row) => ({
+export const demonForm = parseTable<{
+  form: string
+  strength: string
+  agility: string
+  wits: string
+  empathy: string
+  armor: string
+  effect: string
+}>(demonFormData).map((row) => ({
   ...row,
   data: {
     ...row.data,
-    strength: row.data.strength.split("-").map((n) => parseInt(n, 10)),
-    armor: row.data.armor.split("-").map((n) => parseInt(n, 10)),
+    strength: row.data.strength.split("-").map((n) => parseInt(n, 10)) as [number, number],
+    armor: row.data.armor.split("-").map((n) => parseInt(n, 10)) as [number, number],
   },
 }))
 
 const demonFeaturesData = `
-range;feature;desc;modifier
+range;name;desc;modifier
 11-12;Каменная кожа;Класс защиты увеличен;armor:+6
 13-14;Огромный;Телосложение увеличено;strength:2d6
 15-16;Горящий;Неуязвим к огню
@@ -46,10 +55,12 @@ range;feature;desc;modifier
 51-53;Прозрачный;-3 к атакам против него
 54-54;Усеян глазами;При определении инициативы вытяни две карты и выбери лучшую
 55-55;Без глаз;При определении инициативы вытяни две карты и выбери худшую
-56-66;Опасный;Пройди проверку два раза, демон получает оба свойства
+56-66;multi:2
 `.trim()
 
-export const demonFeatures = parseTable(demonFeaturesData)
+export const demonFeatures = parseTable<{ name: string; desc: string; modifier: string }>(
+  demonFeaturesData
+)
 
 const demonWeaknessData = `
 range;name;desc
@@ -68,10 +79,10 @@ range;name;desc
 64-66;Дерево;Получает удвоенный урон от оружия, сделанного из дерева
 `.trim()
 
-export const demonWeakness = parseTable(demonWeaknessData)
+export const demonWeakness = parseTable<{ name: string; desc: string }>(demonWeaknessData)
 
 const daemonAttackData = `
-range;attack;dices;distance;damage
+range;name;dices;distance;damage
 11-15;Когти;d6+4;Нулевая;Брось d6. 1–2: урон 1, 3–5: урон 2, 6: урон 3
 16-22;Зубы;d6+5;Нулевая;Брось d6. 1–2: урон 1, 3–5: урон 2, 6: урон 3
 23-25;Рог;d6+6;Нулевая;Брось d6. 1–4: урон 2, 5–6: урон 3
@@ -81,11 +92,37 @@ range;attack;dices;distance;damage
 42-45;Рев;—;Ближняя;Наведение страха: сила d3+6
 46-51;Смертоносный взгляд;—;Ближняя;Наведение страха: сила d6+5
 52-56;Тяжелое оружие;D6+5;Нулевая;Брось d6. 1 — длинный меч, 2 — двуручный меч, 3 — тяжёлый боевой молот, 4 — моргенштерн, 5 — двуручный топор, 6 — трезубец
-61-65;3;—;—;—
-66-66;4;—;—;—
+61-65;multi:3
+66-66;multi:4
 `.trim()
 
-export const demonAttack = parseTable(daemonAttackData)
+export const demonAttack = parseTable<{
+  name: string
+  dices: string
+  distance: string
+  damage: string
+}>(daemonAttackData)
+
+const demonSpecialData = `
+range;name;desc
+11-14;Неуязвимость к оружию;Демона можно поразить только безоружными атаками и заклинаниями
+15-22;Неуязвимость к огню;Неуязвим к огню
+23-25;Неуязвимость к холоду;Неуязвим к холоду
+26-32;Быстрее молнии;При определении инициативы получает две карты и действует дважды
+33-34;Неуязвимость к физическим атакам;Неуязвим к физическим атакам
+35-36;Паразит;Коснувшись жертвы, демон может подчинить себе её разум. Правила такие же, как для заклинания КУКЛОВОД с мощностью 3
+41-43;Регенерация;Демон восстанавливает d3 пункта телосложения каждый раунд
+44-45;Парализующий;Коснувшись жертвы, демон парализует её ядом силой d6+5
+46-51;Ядовитый;Коснувшись жертвы, демон отравляет её смертельным ядом силой d6+5
+52-54;Оборотень;Может принимать облик любого существа. Копия неотличима от оригинала во всём, кроме одной небольшой детали (например, цвета глаз)
+55-56;Нематериальный;Проходит сквозь твердые тела
+61-62;Парящий в воздухе;Не касается земли. Может парить в воздухе на высоте до 10 метров
+63-64;Телепортация;Один раз в два раунда мгновенно телепортируется в любую точку в пределах дальней дистанции
+65-66;multi:2
+`.trim()
+
+export const demonSpecial: TTableItem<{ name: string; desc: string }>[] =
+  parseTable(demonSpecialData)
 
 export const demonName = `
 Малгорат

@@ -13,8 +13,9 @@ range;type;size;pop
 63-66;palace;large;50-300
 `.trim()
 
-export const castleTypesTable: TTableItem<{ type: string; pop: string; size: string }>[] =
-  parseTable(castleTypesData)
+export const castleTypesTable = parseTable<{ type: string; pop: string; size: string }>(
+  castleTypesData
+)
 
 const castleNamesData = `
 range;name;adj1;adj2;sex
@@ -56,12 +57,12 @@ range;name;adj1;adj2;sex
 66;Холод;Сумеречный;Сумеречная;0
 `.trim()
 
-export const castleNamesTable: TTableItem<{
+export const castleNamesTable = parseTable<{
   name: string
   adj1: string
   adj2: string
-  sex: number
-}>[] = parseTable(castleNamesData).map((item) => ({
+  sex: string
+}>(castleNamesData).map((item) => ({
   ...item,
   data: {
     ...item.data,
@@ -78,13 +79,15 @@ range;type;age
 62-66;после кровавого тумана;1-6
 `.trim()
 
-export const castleAgeTable = parseTable(castleAgeData).map((item) => ({
-  ...item,
-  data: {
-    ...item.data,
-    age: item.data?.age?.split("-").map((v) => parseInt(v)),
-  },
-}))
+export const castleAgeTable = parseTable<{ type: string; age: string }>(castleAgeData).map(
+  (item) => ({
+    ...item,
+    data: {
+      ...item.data,
+      age: item.data?.age?.split("-").map((v) => parseInt(v)) as [number, number],
+    },
+  })
+)
 
 const castleGoalData = `
 range;type;desc

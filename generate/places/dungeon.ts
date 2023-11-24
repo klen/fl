@@ -1,5 +1,5 @@
 import { Item } from "../proto"
-import { selectFromTable } from "../utils"
+import { selectFromTable, takeMulti } from "../utils"
 import {
   dungeonAgeTable,
   dungeonCreatorsTableData,
@@ -74,47 +74,12 @@ export class Dungeon extends Item {
       ) as (typeof dungeonGateTableData)[number]["data"]
     ).type
 
-    this.population = []
-    this.populate()
+    this.population = takeMulti(dungeonPopulationTableData, () => this.rollDice("d66")).map(
+      (p) => p.name
+    )
 
-    this.weirdeness = []
-    this.generateWeirdness()
-  }
-
-  populate() {
-    const roll = this.rollDice("d66")
-    if (roll == 66) {
-      this.populate()
-      this.populate()
-      this.populate()
-    } else if (roll >= 64) {
-      this.populate()
-      this.populate()
-    } else {
-      const pop = (
-        selectFromTable(
-          dungeonPopulationTableData,
-          roll
-        ) as (typeof dungeonPopulationTableData)[number]["data"]
-      ).type
-      this.population.includes(pop) ? this.populate() : this.population.push(pop)
-    }
-  }
-
-  generateWeirdness() {
-    const roll = this.rollDice("d66")
-    if (roll == 66) {
-      this.generateWeirdness()
-      this.generateWeirdness()
-    } else {
-      this.weirdeness.push(
-        (
-          selectFromTable(
-            dungeonWeirdTableData,
-            roll
-          ) as (typeof dungeonWeirdTableData)[number]["data"]
-        ).type
-      )
-    }
+    this.weirdeness = takeMulti(dungeonWeirdTableData, () => this.rollDice("d66")).map(
+      (w) => w.name
+    )
   }
 }

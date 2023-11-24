@@ -1,5 +1,5 @@
 import { Demon } from "@/generate"
-import { Group, PaperProps, Stack, Text, Title } from "@mantine/core"
+import { Divider, Group, PaperProps, Stack, Text, Title } from "@mantine/core"
 import capitalize from "lodash/capitalize"
 import { Fragment } from "react"
 import { useTranslation } from "react-i18next"
@@ -17,7 +17,18 @@ export function DemonInfo({ seed, ...props }: { seed: number } & PaperProps) {
           {demon.name} – {demon.form.toLowerCase()}
         </Title>
         {demon.effect && <Text>{demon.effect}</Text>}
+        {demon.specials.map((special) => (
+          <Text key={special.name}>
+            {special.name}: {special.desc}
+          </Text>
+        ))}
+        {demon.features.map((feature) => (
+          <Text key={feature.name}>
+            {feature.name} ({feature.desc.toLowerCase()})
+          </Text>
+        ))}
         <Text>Слабость: {demon.weakness}</Text>
+        <Divider />
         <Group gap="sm">
           <i className="ra ra-muscle-fat ra-lg" />
           <Text>
@@ -53,18 +64,11 @@ export function DemonInfo({ seed, ...props }: { seed: number } & PaperProps) {
             ) : null
           )}
         </Group>
-        <AppList title="Свойства" icon={<i className="ra ra-lg ra-bleeding-eye" />}>
-          {demon.features.map((feature) => (
-            <Text key={feature.feature}>
-              {feature.feature} ({feature.desc.toLowerCase()})
-            </Text>
-          ))}
-        </AppList>
         <AppList title="Атаки" icon={<i className="ra ra-lg" />}>
           {demon.attacks.map((attack) => (
-            <Text key={attack.attack}>
-              {attack.attack}:{" "}
-              {attack.dices ? (
+            <Text key={attack.name}>
+              {attack.name}:{" "}
+              {attack.dices != "0" ? (
                 <Text span>
                   ({attack.dices}
                   <i className="ra ra-perspective-dice-six" />)

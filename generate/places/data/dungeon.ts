@@ -109,7 +109,7 @@ range;type
 export const dungeonGateTableData: TTableItem<{ type: string }>[] = parseTable(dungeonGateData)
 
 const dungeonPopulationData = `
-range;type
+range;name
 11-11;Колдуны (стр 184)
 12-13;Бандиты (стр 184)
 14-15;Работорговцы (стр 150)
@@ -135,15 +135,14 @@ range;type
 61-61;Дракозмей (стр 98)
 62-62;Демон (стр 90)
 63-63;Дракон (стр 96)
-64-65;Пройди дважды
-66-66;Пройди трижды
+64-65;multi:2
+66-66;multi:3
 `.trim()
 
-export const dungeonPopulationTableData: TTableItem<{ type: string }>[] =
-  parseTable(dungeonPopulationData)
+export const dungeonPopulationTableData = parseTable<{ name: string }>(dungeonPopulationData)
 
 const dungeonWeirdData = `
-range;type
+range;name
 11;Неестественная жара
 12;Влажность
 13;Бассейны с водой
@@ -179,7 +178,7 @@ range;type
 63;Фрагменты скелета на полу
 64;Предостережение, написанное кровью
 65;Потерявшийся искатель приключений
-66;Пройди проверку два раза и используй оба результата
+66;multi:2
 `.trim()
 
-export const dungeonWeirdTableData: TTableItem<{ type: string }>[] = parseTable(dungeonWeirdData)
+export const dungeonWeirdTableData = parseTable<{ name: string }>(dungeonWeirdData)
