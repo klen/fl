@@ -7,7 +7,7 @@ export function useSeed() {
   const reSeed = () => setHash(`${getSeed()}`)
 
   useEffect(() => {
-    if (!hash) reSeed()
+    if (!hash) setTimeout(reSeed, 300)
   }, [])
 
   return [hash, reSeed] as const

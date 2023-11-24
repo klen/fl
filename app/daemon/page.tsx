@@ -8,11 +8,13 @@ export default function Page() {
   const [seed, reSeed] = useSeed()
 
   return (
-    <Stack>
-      <RollBlock rolls={[6]} onRoll={reSeed} />
-      <ClientSide>
-        <DemonInfo seed={parseInt(seed)} mt="xl" />
-      </ClientSide>
-    </Stack>
+    <ClientSide>
+      {seed && (
+        <Stack>
+          <RollBlock rolls={[6]} onRoll={reSeed} />
+          <DemonInfo seed={parseInt(seed)} mt="xl" />
+        </Stack>
+      )}
+    </ClientSide>
   )
 }
