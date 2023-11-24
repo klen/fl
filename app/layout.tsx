@@ -1,4 +1,5 @@
 import { Shell } from "@/components/layouts/Shell"
+import { yandex } from "@/utils/vendor/yandex"
 import { ColorSchemeScript, MantineProvider } from "@mantine/core"
 import "@mantine/core/styles.css"
 import { Metadata } from "next"
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: { children: any }) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
         />
+        <script dangerouslySetInnerHTML={{ __html: yandex }} />
       </head>
       <body>
         <MantineProvider theme={theme}>
