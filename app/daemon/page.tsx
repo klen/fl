@@ -1,22 +1,17 @@
 "use client"
 import { DemonInfo, RollBlock } from "@/components"
 import ClientSide from "@/components/layouts/ClientSide"
-import { getSeed, useHash } from "@/utils"
+import { useSeed } from "@/utils"
 import { Stack } from "@mantine/core"
-import { useEffect } from "react"
 
 export default function Page() {
-  const [hash, setHash] = useHash()
-
-  useEffect(() => {
-    if (!hash) setHash(`${getSeed()}`)
-  }, [hash])
+  const [seed, reSeed] = useSeed()
 
   return (
     <Stack>
-      <RollBlock rolls={[6]} onRoll={() => setHash(`${getSeed()}`)} />
+      <RollBlock rolls={[6]} onRoll={reSeed} />
       <ClientSide>
-        <DemonInfo seed={parseInt(hash)} mt="xl" />
+        <DemonInfo seed={parseInt(seed)} mt="xl" />
       </ClientSide>
     </Stack>
   )

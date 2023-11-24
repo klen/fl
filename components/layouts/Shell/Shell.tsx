@@ -74,7 +74,7 @@ export function Shell({ children }: PropsWithChildren) {
         />
       </AppShellNavbar>
       <AppShellMain>
-        <Container size="sm" py={sm ? "md" : "xl"}>
+        <Container size="md" py={sm ? "md" : "xl"}>
           {children}
         </Container>
       </AppShellMain>

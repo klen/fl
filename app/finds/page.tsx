@@ -2,23 +2,18 @@
 
 import { FindFilters, FindInfo } from "@/components"
 import ClientSide from "@/components/layouts/ClientSide"
-import { getSeed, useHash } from "@/utils"
+import { useSeed } from "@/utils"
 import { Stack } from "@mantine/core"
-import { useEffect } from "react"
 
 export default function Page() {
-  const [hash, setHash] = useHash()
-
-  useEffect(() => {
-    if (!hash) setHash(`${getSeed()}`)
-  }, [hash])
+  const seed = useSeed()[0]
 
   return (
     <ClientSide>
-      {hash && (
+      {seed && (
         <Stack>
-          <FindFilters seed={parseInt(hash)} />
-          <FindInfo seed={parseInt(hash)} mt="xl" />
+          <FindFilters seed={parseInt(seed)} />
+          <FindInfo seed={parseInt(seed)} mt="xl" />
         </Stack>
       )}
     </ClientSide>
