@@ -98,7 +98,7 @@ export class Village extends Item {
         if (houseAmount < house.max) break
       }
 
-      this.houses.push(house.type)
+      if (house.type.length) this.houses.push(house.type)
     }
     this.houses.forEach((h, idx) => {
       if (h == "Трактир") {
