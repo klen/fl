@@ -9,7 +9,7 @@ import Link from "next/link"
 export default function Page() {
   return (
     <ClientSide>
-      <FLPaper>
+      <FLPaper p="md">
         <Stack gap="lg">
           <Title>Генераторы для НРИ "Запретные земли" ({version})</Title>
           <Stack gap="xs">
@@ -41,13 +41,19 @@ export default function Page() {
                 Студия 101
               </Link>
             </Text>
+            <Text>
+              Исходный код проекта доступен на{" "}
+              <Link target="_blank" href="https://github.com/klen/fl">
+                GitHub
+              </Link>
+            </Text>
+            <Text>
+              Для связи с автором используйте{" "}
+              <Link target="_blank" href="https://t.me/horneds">
+                Telegram (horneds)
+              </Link>
+            </Text>
           </Stack>
-          <Text>
-            Исходный код проекта доступен на{" "}
-            <Link target="_blank" href="https://github.com/klen/fl">
-              GitHub
-            </Link>
-          </Text>
         </Stack>
       </FLPaper>
     </ClientSide>
