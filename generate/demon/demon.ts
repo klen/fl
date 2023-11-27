@@ -63,8 +63,6 @@ export class Demon extends Item {
       ...a,
       dices: this.rollDices(a.dices).toString(),
     }))
-
-    console.log("demon", this)
   }
 }
 

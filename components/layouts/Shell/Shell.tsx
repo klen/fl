@@ -16,9 +16,11 @@ import { useDisclosure, useMediaQuery } from "@mantine/hooks"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { PropsWithChildren } from "react"
+import { useTranslation } from "react-i18next"
 
 export function Shell({ children }: PropsWithChildren) {
   const pathname = usePathname()
+  const { t } = useTranslation()
 
   const [opened, { toggle }] = useDisclosure()
   const sm = useMediaQuery("(max-width: 768px)")
@@ -49,26 +51,32 @@ export function Shell({ children }: PropsWithChildren) {
         <Divider />
         <NavLink
           href="/place"
-          label="Места"
+          label={t("Places")}
           active={pathname.startsWith("/place")}
           leftSection={<i className="ra ra-tower" />}
         />
         <NavLink
           href="/finds"
-          label="Находки"
+          label={t("Finds")}
           active={pathname.startsWith("/finds")}
           leftSection={<i className="ra ra-diamond" />}
         />
         <NavLink
           href="/daemon"
-          label="Демоны"
+          label={t("Demons")}
           active={pathname.startsWith("/daemon")}
           leftSection={<i className="ra ra-tentacle" />}
+        />
+        <NavLink
+          href="/legends"
+          label={t("Legends")}
+          active={pathname.startsWith("/legends")}
+          leftSection={<i className="ra ra-scroll-unfurled" />}
         />
         {!sm && <Divider mt="auto" />}
         <NavLink
           href="/"
-          label="О проекте"
+          label={t("About")}
           active={pathname == "/"}
           leftSection={<i className="ra ra-skull" />}
         />
