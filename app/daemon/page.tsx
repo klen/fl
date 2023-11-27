@@ -1,8 +1,8 @@
 "use client"
-import { DemonInfo, RollBlock } from "@/components"
+import { DemonInfo, DiceButton } from "@/components"
 import ClientSide from "@/components/layouts/ClientSide"
 import { useSeed } from "@/utils"
-import { Stack } from "@mantine/core"
+import { Center, Stack } from "@mantine/core"
 
 export default function Page() {
   const [seed, reSeed] = useSeed()
@@ -11,8 +11,10 @@ export default function Page() {
     <ClientSide>
       {seed && (
         <Stack>
-          <RollBlock rolls={[6]} onRoll={reSeed} />
           <DemonInfo seed={parseInt(seed)} mt="xl" />
+          <Center>
+            <DiceButton rolls={[6]} onClick={reSeed} />
+          </Center>
         </Stack>
       )}
     </ClientSide>

@@ -1,10 +1,11 @@
 "use client"
 
-import { RollBlock } from "@/components"
+import { DiceButton } from "@/components"
 import ClientSide from "@/components/layouts/ClientSide"
 import { LegendInfo } from "@/components/legend"
 import { useSeed } from "@/utils"
-import { Stack } from "@mantine/core"
+import { Center, Stack } from "@mantine/core"
+import { parseInt } from "lodash"
 
 export default function Page() {
   const [seed, reSeed] = useSeed()
@@ -12,8 +13,10 @@ export default function Page() {
     <ClientSide>
       {seed && (
         <Stack>
-          <RollBlock rolls={[6]} onRoll={reSeed} />
           <LegendInfo seed={parseInt(seed)} mt="xl" />
+          <Center>
+            <DiceButton rolls={[6]} onClick={reSeed} />
+          </Center>
         </Stack>
       )}
     </ClientSide>

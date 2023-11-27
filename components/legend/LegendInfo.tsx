@@ -1,12 +1,13 @@
 import { Legend } from "@/generate/legends/legend"
-import { PaperProps, Stack, Text } from "@mantine/core"
+import { PaperProps, Stack, Text, Title } from "@mantine/core"
 import { FLPaper } from "../layouts"
 
 export function LegendInfo({ seed, ...props }: { seed: number } & PaperProps) {
   const legend = new Legend(seed)
   return (
-    <FLPaper pb="xl" {...props}>
+    <FLPaper p="md" {...props}>
       <Stack gap="xs">
+        <Title>Давным-давно, {legend.ageDesc}...</Title>
         <Text>
           Давным-давно, {legend.ageDesc} {legend.sex == "0" ? "жил-был" : "жила-была"}{" "}
           {legend.subject} {legend.sex == "0" ? "который искал" : "которая искала"} {legend.search}{" "}
@@ -15,6 +16,10 @@ export function LegendInfo({ seed, ...props }: { seed: number } & PaperProps) {
         <Text>
           {legend.sex == "0" ? "Он отправился" : "Она отправилась"} {legend.place} {legend.distance}{" "}
           где-то {legend.where} {legend.direction}.
+        </Text>
+        <Text>
+          Рассказывают, что потом {legend.final[`sex${legend.sex}`]}, а в том месте остались{" "}
+          {legend.find} и {legend.enemy}.
         </Text>
       </Stack>
     </FLPaper>
