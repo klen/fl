@@ -1,0 +1,94 @@
+[
+  {
+    "name": "Волчонок",
+    "attrs": {
+      "strength": 4,
+      "agility": 5,
+      "wits": 3,
+      "empathy": 3
+    },
+    "skills": {
+      "melee": 1,
+      "endurance": 1,
+      "move": 1,
+      "stealth": 1,
+      "animal handling": 2
+    }
+  },
+  {
+    "name": "Проныра",
+    "attrs": {
+      "strength": 3,
+      "agility": 5,
+      "wits": 3,
+      "empathy": 4
+    },
+    "skills": {
+      "stealth": 2,
+      "scouting": 2,
+      "insight": 1,
+      "manipulation": 1
+    }
+  },
+  {
+    "name": "Дитя лесов",
+    "attrs": {
+      "strength": 4,
+      "agility": 4,
+      "wits": 4,
+      "empathy": 3
+    },
+    "skills": {
+      "endurance": 1,
+      "marksmanship": 1,
+      "move": 1,
+      "survival": 2,
+      "scouting": 1
+    }
+  },
+  {
+    "name": "Дикарь",
+    "attrs": {
+      "strength": 4,
+      "agility": 4,
+      "wits": 3,
+      "empathy": 4
+    },
+    "skills": {
+      "melee": 2,
+      "might": 1,
+      "move": 2,
+      "survival": 1
+    }
+  },
+  {
+    "name": "Странник",
+    "attrs": {
+      "strength": 4,
+      "agility": 4,
+      "wits": 4,
+      "empathy": 3
+    },
+    "skills": {
+      "melee": 1,
+      "endurance": 1,
+      "survival": 2,
+      "scouting": 1,
+      "animal handling": 1
+    }
+  },
+  {
+    "name": "Рассказчик",
+    "attrs": {
+      "strength": 3,
+      "agility": 4,
+      "wits": 3,
+      "empathy": 5
+    },
+    "skills": {
+      "lore": 1,
+      "insight": 2,
+      "performance": 3
+    }
+  }
+]

@@ -1,0 +1,131 @@
+[
+  {
+    "name": "Плен",
+    "skills": {
+      "might": 1,
+      "survival": 1
+    },
+    "talents": [
+      "pain resistant"
+    ]
+  },
+  {
+    "name": "Кровавая битва",
+    "skills": {
+      "melee": 2
+    },
+    "talents": [
+      "sword fighter"
+    ]
+  },
+  {
+    "name": "Долгий поход",
+    "skills": {
+      "survival": 1,
+      "healing": 1
+    },
+    "talents": [
+      "pack rat"
+    ]
+  },
+  {
+    "name": "Жизнь в седле",
+    "skills": {
+      "melee": 1,
+      "animal handling": 1
+    },
+    "talents": [
+      "horseback fighter"
+    ]
+  },
+  {
+    "name": "Дозорный",
+    "skills": {
+      "marksmanship": 1,
+      "scouting": 1
+    },
+    "talents": [
+      "defender"
+    ]
+  },
+  {
+    "name": "Походный лагерь",
+    "skills": {
+      "survival": 1,
+      "healing": 1
+    },
+    "talents": [
+      "pack rat"
+    ]
+  },
+  {
+    "name": "Походный лагерь",
+    "skills": {
+      "survival": 1,
+      "healing": 1
+    },
+    "talents": [
+      "pack rat"
+    ]
+  },
+  {
+    "name": "Походный лагерь",
+    "skills": {
+      "survival": 1,
+      "healing": 1
+    },
+    "talents": [
+      "pack rat"
+    ]
+  },
+  {
+    "name": "Походный лагерь",
+    "skills": {
+      "survival": 1,
+      "healing": 1
+    },
+    "talents": [
+      "pack rat"
+    ]
+  },
+  {
+    "name": "Походный лагерь",
+    "skills": {
+      "survival": 1,
+      "healing": 1
+    },
+    "talents": [
+      "pack rat"
+    ]
+  },
+  {
+    "name": "Походный лагерь",
+    "skills": {
+      "survival": 1,
+      "healing": 1
+    },
+    "talents": [
+      "pack rat"
+    ]
+  },
+  {
+    "name": "Походный лагерь",
+    "skills": {
+      "survival": 1,
+      "healing": 1
+    },
+    "talents": [
+      "pack rat"
+    ]
+  },
+  {
+    "name": "Командир",
+    "skills": {
+      "lore": 1,
+      "manipulation": 1
+    },
+    "talents": [
+      "cold blooded"
+    ]
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "name": "Непродуманная кража",
+    "skills": {
+      "sleight of hand": 1,
+      "insight": 1
+    },
+    "talents": [
+      "lightning fast"
+    ]
+  },
+  {
+    "name": "Тюрьма",
+    "skills": {
+      "endurance": 1,
+      "survival": 1
+    },
+    "talents": [
+      "pain resistant"
+    ]
+  },
+  {
+    "name": "Успешное ограбление",
+    "skills": {
+      "stealth": 1,
+      "sleight of hand": 1
+    },
+    "talents": [
+      "lucky"
+    ]
+  },
+  {
+    "name": "Побег из тюрьмы",
+    "skills": {
+      "athletics": 1,
+      "acrobatics": 1
+    },
+    "talents": [
+      "fast"
+    ]
+  },
+  {
+    "name": "Побег из тюрьмы",
+    "skills": {
+      "athletics": 1,
+      "acrobatics": 1
+    },
+    "talents": [
+      "fast"
+    ]
+  },
+  {
+    "name": "Побег из тюрьмы",
+    "skills": {
+      "athletics": 1,
+      "acrobatics": 1
+    },
+    "talents": [
+      "fast"
+    ]
+  },
+  {
+    "name": "Побег из тюрьмы",
+    "skills": {
+      "athletics": 1,
+      "acrobatics": 1
+    },
+    "talents": [
+      "fast"
+    ]
+  },
+  {
+    "name": "Побег из тюрьмы",
+    "skills": {
+      "athletics": 1,
+      "acrobatics": 1
+    },
+    "talents": [
+      "fast"
+    ]
+  },
+  {
+    "name": "Побег из тюрьмы",
+    "skills": {
+      "athletics": 1,
+      "acrobatics": 1
+    },
+    "talents": [
+      "fast"
+    ]
+  },
+  {
+    "name": "Побег из тюрьмы",
+    "skills": {
+      "athletics": 1,
+      "acrobatics": 1
+    },
+    "talents": [
+      "fast"
+    ]
+  },
+  {
+    "name": "Гильдия воров",
+    "skills": {
+      "insight": 1,
+      "scouting": 1
+    },
+    "talents": [
+      "sixth sense"
+    ]
+  },
+  {
+    "name": "Служба в отряде",
+    "skills": {
+      "marksmanship": 1,
+      "scouting": 1
+    },
+    "talents": [
+      "pathfinder"
+    ]
+  },
+  {
+    "name": "Банда грабителей",
+    "skills": {
+      "melee": 1,
+      "survival": 1
+    },
+    "talents": [
+      "lightning fast"
+    ]
+  }
+]

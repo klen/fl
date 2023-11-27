@@ -21,7 +21,7 @@ export class Dungeon extends Item {
   creator: string
   createReason: string | null
 
-  goal: string
+  name: string
   entrance: string
   history: string
   weirdeness: string[]
@@ -60,7 +60,7 @@ export class Dungeon extends Item {
     this.creator = c1.type
     this.createReason = creatorRoll > 13 ? c2.reason : null
 
-    this.goal = selectFromTable(dungeonGoalTableData, this.rollDice("d66")).type
+    this.name = selectFromTable(dungeonGoalTableData, this.rollDice("d66")).type
     this.entrance = (
       selectFromTable(
         dungeonGateTableData,

@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Одиночка",
+    "attrs": {
+      "strength": 4,
+      "agility": 3,
+      "wits": 5,
+      "empathy": 3
+    },
+    "skills": {
+      "melee": 1,
+      "survival": 2,
+      "insight": 2,
+      "scouting": 1
+    }
+  },
+  {
+    "name": "Воин",
+    "attrs": {
+      "strength": 4,
+      "agility": 5,
+      "wits": 3,
+      "empathy": 3
+    },
+    "skills": {
+      "melee": 2,
+      "might": 1,
+      "endurance": 1,
+      "marksmanship": 2
+    }
+  },
+  {
+    "name": "Дитя леса",
+    "attrs": {
+      "strength": 3,
+      "agility": 4,
+      "wits": 4,
+      "empathy": 4
+    },
+    "skills": {
+      "survival": 3,
+      "lore": 2,
+      "scouting": 1
+    }
+  },
+  {
+    "name": "Усердный ученик",
+    "attrs": {
+      "strength": 3,
+      "agility": 3,
+      "wits": 5,
+      "empathy": 4
+    },
+    "skills": {
+      "crafting": 1,
+      "lore": 3,
+      "insight": 1,
+      "manipulation": 1
+    }
+  },
+  {
+    "name": "Странник",
+    "attrs": {
+      "strength": 4,
+      "agility": 4,
+      "wits": 3,
+      "empathy": 4
+    },
+    "skills": {
+      "melee": 1,
+      "endurance": 1,
+      "survival": 2,
+      "scouting": 1,
+      "animal handling": 1
+    }
+  },
+  {
+    "name": "Ученик друида",
+    "attrs": {
+      "strength": 3,
+      "agility": 4,
+      "wits": 5,
+      "empathy": 3
+    },
+    "skills": {
+      "survival": 2,
+      "lore": 1,
+      "scouting": 1,
+      "animal handling": 1,
+      "healing": 1
+    }
+  }
+]

@@ -1,0 +1,61 @@
+[
+  {
+    "name": "Популярная баллада",
+    "skills": {
+      "manipulation": 1,
+      "performance": 1
+    },
+    "talents": [
+      "lucky"
+    ]
+  },
+  {
+    "name": "Менестрель",
+    "skills": {
+      "performance": 2
+    },
+    "talents": [
+      "sharp tongue"
+    ]
+  },
+  {
+    "name": "Вдохновляющее путешествие",
+    "skills": {
+      "survival": 1,
+      "lore": 1
+    },
+    "talents": [
+      "fearless"
+    ]
+  },
+  {
+    "name": "Певец знати",
+    "skills": {
+      "insight": 1,
+      "performance": 1
+    },
+    "talents": [
+      "sixth sense"
+    ]
+  },
+  {
+    "name": "Служба в отряде",
+    "skills": {
+      "melee": 1,
+      "survival": 1
+    },
+    "talents": [
+      "defender"
+    ]
+  },
+  {
+    "name": "Дуэль с соперником",
+    "skills": {
+      "melee": 1,
+      "healing": 1
+    },
+    "talents": [
+      "sword fighter"
+    ]
+  }
+]

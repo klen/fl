@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Бард",
+    "attrs": {
+      "strength": 3,
+      "agility": 3,
+      "wits": 4,
+      "empathy": 5
+    },
+    "skills": {
+      "lore": 1,
+      "insight": 1,
+      "manipulation": 1,
+      "performance": 3
+    }
+  },
+  {
+    "name": "Рабочий",
+    "attrs": {
+      "strength": 5,
+      "agility": 4,
+      "wits": 3,
+      "empathy": 3
+    },
+    "skills": {
+      "might": 2,
+      "crafting": 2,
+      "endurance": 2
+    }
+  },
+  {
+    "name": "Разбойник",
+    "attrs": {
+      "strength": 4,
+      "agility": 4,
+      "wits": 4,
+      "empathy": 3
+    },
+    "skills": {
+      "melee": 2,
+      "sleight of hand": 1,
+      "stealth": 1,
+      "survival": 1,
+      "scouting": 1
+    }
+  },
+  {
+    "name": "Бродяга",
+    "attrs": {
+      "strength": 4,
+      "agility": 4,
+      "wits": 3,
+      "empathy": 4
+    },
+    "skills": {
+      "melee": 1,
+      "endurance": 1,
+      "survival": 2,
+      "scouting": 1,
+      "animal handling": 1
+    }
+  },
+  {
+    "name": "Воитель",
+    "attrs": {
+      "strength": 5,
+      "agility": 4,
+      "wits": 3,
+      "empathy": 3
+    },
+    "skills": {
+      "melee": 2,
+      "might": 1,
+      "marksmanship": 2,
+      "move": 1
+    }
+  },
+  {
+    "name": "Одиночка",
+    "attrs": {
+      "strength": 4,
+      "agility": 3,
+      "wits": 5,
+      "empathy": 3
+    },
+    "skills": {
+      "melee": 1,
+      "survival": 2,
+      "insight": 2,
+      "scouting": 1
+    }
+  }
+]

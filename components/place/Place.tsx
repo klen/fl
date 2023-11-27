@@ -5,6 +5,7 @@ import { placeTypesTable } from "@/generate/places/data"
 import { mulberry32, rollDice } from "@/utils"
 import { PaperProps } from "@mantine/core"
 import { FLPaper } from "../layouts"
+import { Bookmark } from "../ui"
 import { CastleInfo } from "./CastleInfo"
 import { DungeonInfo } from "./DungeonInfo"
 import { VillageInfo } from "./VillageInfo"
@@ -13,16 +14,23 @@ export function Place({ seed, ...props }: { seed: number } & PaperProps) {
   const random = mulberry32(seed)
   const typeRoll = rollDice("d6", random)
   const placeType = selectFromTable(placeTypesTable, typeRoll)
+  const place =
+    placeType == "castle"
+      ? new Castle(seed)
+      : placeType == "dungeon"
+        ? new Dungeon(seed)
+        : new Village(seed)
 
   return (
-    <FLPaper pb="xl" {...props}>
+    <FLPaper p="md" pos="relative" {...props}>
       {placeType == "castle" ? (
-        <CastleInfo castle={new Castle(seed)} />
+        <CastleInfo castle={place as Castle} />
       ) : placeType == "dungeon" ? (
-        <DungeonInfo dungeon={new Dungeon(seed)} />
+        <DungeonInfo dungeon={place as Dungeon} />
       ) : (
-        <VillageInfo village={new Village(seed)} />
+        <VillageInfo village={place as Village} />
       )}
+      <Bookmark prefix="places" seed={seed} name={place.name} type={placeType} />
     </FLPaper>
   )
 }

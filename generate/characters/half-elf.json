@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Беглец",
+    "attrs": {
+      "strength": 4,
+      "agility": 5,
+      "wits": 3,
+      "empathy": 4
+    },
+    "skills": {
+      "melee": 1,
+      "stealth": 2,
+      "insight": 1,
+      "scouting": 2
+    }
+  },
+  {
+    "name": "Настоящий талант",
+    "attrs": {
+      "strength": 3,
+      "agility": 3,
+      "wits": 4,
+      "empathy": 5
+    },
+    "skills": {
+      "crafting": 2,
+      "move": 1,
+      "lore": 1,
+      "performance": 2
+    }
+  },
+  {
+    "name": "Всезнайка",
+    "attrs": {
+      "strength": 3,
+      "agility": 4,
+      "wits": 5,
+      "empathy": 3
+    },
+    "skills": {
+      "crafting": 1,
+      "lore": 3,
+      "insight": 1,
+      "healing": 1
+    }
+  },
+  {
+    "name": "Акробат",
+    "attrs": {
+      "strength": 3,
+      "agility": 5,
+      "wits": 3,
+      "empathy": 4
+    },
+    "skills": {
+      "sleight of hand": 2,
+      "move": 2,
+      "stealth": 1,
+      "performance": 1
+    }
+  },
+  {
+    "name": "Воин",
+    "attrs": {
+      "strength": 4,
+      "agility": 5,
+      "wits": 3,
+      "empathy": 3
+    },
+    "skills": {
+      "melee": 2,
+      "might": 1,
+      "endurance": 1,
+      "marksmanship": 2
+    }
+  },
+  {
+    "name": "Тень",
+    "attrs": {
+      "strength": 3,
+      "agility": 4,
+      "wits": 4,
+      "empathy": 4
+    },
+    "skills": {
+      "melee": 1,
+      "stealth": 2,
+      "sleight of hand": 2,
+      "insight": 1
+    }
+  }
+]

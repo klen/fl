@@ -1,5 +1,6 @@
 "use client"
 
+import { Favorites } from "@/components/Favorites"
 import {
   AppShell,
   AppShellHeader,
@@ -8,15 +9,18 @@ import {
   Burger,
   Container,
   Divider,
+  Drawer,
   Group,
   NavLink,
   Title,
 } from "@mantine/core"
 import { useDisclosure, useMediaQuery } from "@mantine/hooks"
+import { IconHeart } from "@tabler/icons-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { PropsWithChildren } from "react"
 import { useTranslation } from "react-i18next"
+import ClientSide from "../ClientSide"
 
 export function Shell({ children }: PropsWithChildren) {
   const pathname = usePathname()
@@ -74,6 +78,7 @@ export function Shell({ children }: PropsWithChildren) {
           leftSection={<i className="ra ra-scroll-unfurled" />}
         />
         {!sm && <Divider mt="auto" />}
+        <FavoritesLink />
         <NavLink
           href="/"
           label={t("About")}
@@ -87,5 +92,26 @@ export function Shell({ children }: PropsWithChildren) {
         </Container>
       </AppShellMain>
     </AppShell>
+  )
+}
+
+function FavoritesLink() {
+  const { t } = useTranslation()
+  const [opened, { open, close }] = useDisclosure(false)
+
+  return (
+    <ClientSide>
+      <NavLink active={opened} onClick={open} label={t("Favorites")} leftSection={<IconHeart />} />
+      <Drawer
+        opened={opened}
+        onClose={close}
+        padding="md"
+        size="md"
+        position="right"
+        title={t("Favorites")}
+      >
+        <Favorites />
+      </Drawer>
+    </ClientSide>
   )
 }

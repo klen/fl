@@ -4,14 +4,14 @@ import capitalize from "lodash/capitalize"
 import { Fragment } from "react"
 import { useTranslation } from "react-i18next"
 import { FLPaper } from "../layouts"
-import { AppList } from "../ui"
+import { AppList, Bookmark } from "../ui"
 
 export function DemonInfo({ seed, ...props }: { seed: number } & PaperProps) {
   const { t } = useTranslation()
   const demon = new Demon(seed)
 
   return (
-    <FLPaper pb="xl" {...props}>
+    <FLPaper p="md" pos="relative" {...props}>
       <Stack>
         <Title>
           {demon.name} – {demon.form.toLowerCase()}
@@ -79,6 +79,7 @@ export function DemonInfo({ seed, ...props }: { seed: number } & PaperProps) {
           ))}
         </AppList>
       </Stack>
+      <Bookmark prefix="demons" seed={seed} name={demon.name} />
     </FLPaper>
   )
 }

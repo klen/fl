@@ -1,3 +1,4 @@
+export * from "./Favorites"
 export * from "./common"
 export * from "./demon"
 export * from "./finds"

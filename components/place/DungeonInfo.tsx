@@ -10,7 +10,7 @@ export function DungeonInfo({ dungeon }: { dungeon: Dungeon }) {
     <Stack>
       <Title>
         <i className="ra  ra-hole-ladder" style={{ marginRight: 8 }} />
-        {dungeon.goal} ({t("dungeon")})
+        {dungeon.name} ({t("dungeon")})
       </Title>
       <Stack gap="xs">
         <Text>

@@ -1,0 +1,96 @@
+[
+  {
+    "name": "Ученик пекаря",
+    "attrs": {
+      "strength": 4,
+      "agility": 4,
+      "wits": 3,
+      "empathy": 4
+    },
+    "skills": {
+      "crafting": 2,
+      "sleight of hand": 1,
+      "survival": 1,
+      "lore": 1,
+      "performance": 1
+    }
+  },
+  {
+    "name": "Рабочий",
+    "attrs": {
+      "strength": 4,
+      "agility": 4,
+      "wits": 3,
+      "empathy": 4
+    },
+    "skills": {
+      "melee": 1,
+      "might": 2,
+      "crafting": 1,
+      "survival": 1,
+      "animal handling": 1
+    }
+  },
+  {
+    "name": "Ремесленник",
+    "attrs": {
+      "strength": 3,
+      "agility": 4,
+      "wits": 4,
+      "empathy": 4
+    },
+    "skills": {
+      "melee": 1,
+      "crafting": 3,
+      "lore": 1,
+      "insight": 1
+    }
+  },
+  {
+    "name": "Поварёнок",
+    "attrs": {
+      "strength": 4,
+      "agility": 4,
+      "wits": 3,
+      "empathy": 4
+    },
+    "skills": {
+      "crafting": 2,
+      "sleight of hand": 1,
+      "survival": 1,
+      "lore": 1,
+      "animal handling": 1
+    }
+  },
+  {
+    "name": "Книгочей",
+    "attrs": {
+      "strength": 3,
+      "agility": 3,
+      "wits": 5,
+      "empathy": 4
+    },
+    "skills": {
+      "lore": 3,
+      "insight": 1,
+      "manipulation": 1,
+      "healing": 1
+    }
+  },
+  {
+    "name": "Одиночка",
+    "attrs": {
+      "strength": 4,
+      "agility": 4,
+      "wits": 4,
+      "empathy": 3
+    },
+    "skills": {
+      "melee": 1,
+      "sleight of hand": 1,
+      "stealth": 2,
+      "scouting": 1,
+      "manipulation": 1
+    }
+  }
+]

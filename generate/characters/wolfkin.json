@@ -1,0 +1,89 @@
+[
+  {
+    "name": "Ревун",
+    "attrs": {
+      "strength": 3,
+      "agility": 4,
+      "wits": 4,
+      "empathy": 4
+    },
+    "skills": {
+      "survival": 1,
+      "lore": 1,
+      "insight": 1,
+      "performance": 3
+    }
+  },
+  {
+    "name": "Охотник",
+    "attrs": {
+      "strength": 4,
+      "agility": 4,
+      "wits": 4,
+      "empathy": 3
+    },
+    "skills": {
+      "melee": 1,
+      "endurance": 1,
+      "scouting": 2,
+      "survival": 2
+    }
+  },
+  {
+    "name": "Изгой",
+    "attrs": {
+      "strength": 4,
+      "agility": 3,
+      "wits": 5,
+      "empathy": 3
+    },
+    "skills": {
+      "melee": 1,
+      "survival": 2,
+      "insight": 2,
+      "scouting": 1
+    }
+  },
+  {
+    "name": "Ищейка",
+    "attrs": {
+      "strength": 3,
+      "agility": 4,
+      "wits": 5,
+      "empathy": 3
+    },
+    "skills": {
+      "stealth": 2,
+      "survival": 1,
+      "scouting": 3
+    }
+  },
+  {
+    "name": "Боец",
+    "attrs": {
+      "strength": 5,
+      "agility": 4,
+      "wits": 3,
+      "empathy": 3
+    },
+    "skills": {
+      "melee": 3,
+      "might": 2,
+      "move": 1
+    }
+  },
+  {
+    "name": "Дитя леса",
+    "attrs": {
+      "strength": 3,
+      "agility": 4,
+      "wits": 4,
+      "empathy": 4
+    },
+    "skills": {
+      "survival": 3,
+      "lore": 2,
+      "scouting": 1
+    }
+  }
+]

@@ -1,0 +1,96 @@
+[
+  {
+    "name": "Дитя ворона",
+    "attrs": {
+      "strength": 3,
+      "agility": 4,
+      "wits": 4,
+      "empathy": 4
+    },
+    "skills": {
+      "crafting": 1,
+      "move": 1,
+      "lore": 2,
+      "insight": 1,
+      "scouting": 1
+    }
+  },
+  {
+    "name": "Ученик друида",
+    "attrs": {
+      "strength": 3,
+      "agility": 4,
+      "wits": 5,
+      "empathy": 3
+    },
+    "skills": {
+      "survival": 2,
+      "scouting": 1,
+      "lore": 1,
+      "animal handling": 1,
+      "healing": 1
+    }
+  },
+  {
+    "name": "Защитник",
+    "attrs": {
+      "strength": 5,
+      "agility": 4,
+      "wits": 3,
+      "empathy": 3
+    },
+    "skills": {
+      "melee": 2,
+      "might": 1,
+      "marksmanship": 2,
+      "move": 1
+    }
+  },
+  {
+    "name": "Странник",
+    "attrs": {
+      "strength": 4,
+      "agility": 4,
+      "wits": 3,
+      "empathy": 4
+    },
+    "skills": {
+      "melee": 1,
+      "endurance": 1,
+      "survival": 2,
+      "scouting": 1,
+      "animal handling": 1
+    }
+  },
+  {
+    "name": "Рабочий",
+    "attrs": {
+      "strength": 5,
+      "agility": 3,
+      "wits": 3,
+      "empathy": 4
+    },
+    "skills": {
+      "melee": 1,
+      "might": 2,
+      "crafting": 1,
+      "survival": 1,
+      "animal handling": 1
+    }
+  },
+  {
+    "name": "Пастух",
+    "attrs": {
+      "strength": 4,
+      "agility": 4,
+      "wits": 3,
+      "empathy": 4
+    },
+    "skills": {
+      "might": 1,
+      "crafting": 1,
+      "scouting": 2,
+      "animal handling": 2
+    }
+  }
+]

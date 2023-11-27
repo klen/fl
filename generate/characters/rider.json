@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Служба в отряде",
+    "skills": {
+      "melee": 1,
+      "marksmanship": 1
+    },
+    "talents": [
+      "horseback fighter"
+    ]
+  },
+  {
+    "name": "Конные соревнования",
+    "skills": {
+      "move": 1,
+      "animal handling": 1
+    },
+    "talents": [
+      "fast footwork"
+    ]
+  },
+  {
+    "name": "Путешествия",
+    "skills": {
+      "survival": 1,
+      "scouting": 1
+    },
+    "talents": [
+      "herbalist"
+    ]
+  },
+  {
+    "name": "Охрана каравана",
+    "skills": {
+      "melee": 1,
+      "scouting": 1
+    },
+    "talents": [
+      "pathfinder"
+    ]
+  },
+  {
+    "name": "Пастух",
+    "skills": {
+      "animal handling": 1,
+      "move": 1
+    },
+    "talents": [
+      "quartermaster"
+    ]
+  },
+  {
+    "name": "Жизнь в степи",
+    "skills": {
+      "marksmanship": 1,
+      "animal handling": 1
+    },
+    "talents": [
+      "tailor"
+    ]
+  }
+]

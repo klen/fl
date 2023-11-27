@@ -2,11 +2,12 @@ import { Find } from "@/generate"
 import { PaperProps, Stack, Text, Title } from "@mantine/core"
 import { MoneyLine } from "../common"
 import { FLPaper } from "../layouts"
+import { Bookmark } from "../ui"
 
 export function FindInfo({ seed, ...props }: { seed: number } & PaperProps) {
   const find = new Find(seed)
   return (
-    <FLPaper pb="xl" {...props}>
+    <FLPaper p="md" pos="relative" {...props}>
       <Stack gap="xs">
         <Title>
           <i className="ra  ra-diamond" style={{ marginRight: 8 }} />
@@ -26,6 +27,7 @@ export function FindInfo({ seed, ...props }: { seed: number } & PaperProps) {
         )}
         <Text>Вес: {find.weight}</Text>
       </Stack>
+      <Bookmark prefix="finds" seed={seed} name={find.desc} />
     </FLPaper>
   )
 }

@@ -24,6 +24,9 @@ export default function Page() {
               <List.Item>
                 Генерация <Link href="/daemon">демонов</Link>
               </List.Item>
+              <List.Item>
+                Генерация <Link href="/legends">легенд</Link>
+              </List.Item>
             </List>
           </Stack>
           <Stack gap="xs">

@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Ученик кузнеца",
+    "attrs": {
+      "strength": 5,
+      "agility": 3,
+      "wits": 4,
+      "empathy": 3
+    },
+    "skills": {
+      "melee": 1,
+      "might": 1,
+      "crafting": 3,
+      "endurance": 1
+    }
+  },
+  {
+    "name": "Прирожденный шахтер",
+    "attrs": {
+      "strength": 4,
+      "agility": 4,
+      "wits": 4,
+      "empathy": 3
+    },
+    "skills": {
+      "crafting": 1,
+      "endurance": 2,
+      "survival": 2,
+      "scouting": 1
+    }
+  },
+  {
+    "name": "Ученик разведчика",
+    "attrs": {
+      "strength": 4,
+      "agility": 4,
+      "wits": 4,
+      "empathy": 3
+    },
+    "skills": {
+      "melee": 1,
+      "stealth": 2,
+      "survival": 1,
+      "scouting": 2
+    }
+  },
+  {
+    "name": "Ученик воина",
+    "attrs": {
+      "strength": 5,
+      "agility": 4,
+      "wits": 3,
+      "empathy": 3
+    },
+    "skills": {
+      "melee": 2,
+      "might": 1,
+      "endurance": 1,
+      "marksmanship": 1
+    }
+  },
+  {
+    "name": "Резчик",
+    "attrs": {
+      "strength": 4,
+      "agility": 3,
+      "wits": 5,
+      "empathy": 3
+    },
+    "skills": {
+      "might": 1,
+      "crafting": 2,
+      "survival": 1,
+      "lore": 2
+    }
+  },
+  {
+    "name": "Усердный ученик",
+    "attrs": {
+      "strength": 3,
+      "agility": 3,
+      "wits": 5,
+      "empathy": 4
+    },
+    "skills": {
+      "crafting": 1,
+      "lore": 3,
+      "insight": 1,
+      "manipulation": 1
+    }
+  }
+]

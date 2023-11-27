@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Рожден в седле",
+    "attrs": {
+      "strength": 4,
+      "agility": 5,
+      "wits": 3,
+      "empathy": 3
+    },
+    "skills": {
+      "move": 2,
+      "survival": 2,
+      "animal handling": 2
+    }
+  },
+  {
+    "name": "Мечтатель",
+    "attrs": {
+      "strength": 3,
+      "agility": 3,
+      "wits": 4,
+      "empathy": 5
+    },
+    "skills": {
+      "lore": 2,
+      "insight": 1,
+      "animal handling": 1,
+      "performance": 2
+    }
+  },
+  {
+    "name": "Сильнейший в клане",
+    "attrs": {
+      "strength": 5,
+      "agility": 3,
+      "wits": 3,
+      "empathy": 4
+    },
+    "skills": {
+      "melee": 2,
+      "might": 2,
+      "endurance": 1,
+      "animal handling": 1
+    }
+  },
+  {
+    "name": "Ученик мудреца",
+    "attrs": {
+      "strength": 3,
+      "agility": 3,
+      "wits": 5,
+      "empathy": 4
+    },
+    "skills": {
+      "lore": 2,
+      "insight": 1,
+      "animal handling": 1,
+      "healing": 2
+    }
+  },
+  {
+    "name": "Охотник",
+    "attrs": {
+      "strength": 3,
+      "agility": 4,
+      "wits": 4,
+      "empathy": 4
+    },
+    "skills": {
+      "marksmanship": 2,
+      "survival": 1,
+      "scouting": 2,
+      "animal handling": 1
+    }
+  },
+  {
+    "name": "Дитя ветра",
+    "attrs": {
+      "strength": 4,
+      "agility": 4,
+      "wits": 3,
+      "empathy": 4
+    },
+    "skills": {
+      "melee": 1,
+      "endurance": 1,
+      "marksmanship": 1,
+      "survival": 2,
+      "animal handling": 1
+    }
+  }
+]
