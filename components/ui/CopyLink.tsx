@@ -1,6 +1,6 @@
 import { ActionIcon, Tooltip } from "@mantine/core"
 import { useClipboard } from "@mantine/hooks"
-import { IconCopy } from "@tabler/icons-react"
+import { IconShare2 } from "@tabler/icons-react"
 import { useTranslation } from "react-i18next"
 
 export function CopyLink() {
@@ -15,7 +15,7 @@ export function CopyLink() {
         color={clipboard.copied ? "gray" : "dark"}
         onClick={() => clipboard.copy(window.location.href)}
       >
-        <IconCopy size={30} />
+        <IconShare2 size={32} />
       </ActionIcon>
     </Tooltip>
   )
