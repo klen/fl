@@ -5,7 +5,7 @@ import { placeTypesTable } from "@/generate/places/data"
 import { mulberry32, rollDice } from "@/utils"
 import { PaperProps } from "@mantine/core"
 import { FLPaper } from "../layouts"
-import { Bookmark } from "../ui"
+import { Bookmark, Controls, CopyLink } from "../ui"
 import { CastleInfo } from "./CastleInfo"
 import { DungeonInfo } from "./DungeonInfo"
 import { VillageInfo } from "./VillageInfo"
@@ -30,7 +30,10 @@ export function Place({ seed, ...props }: { seed: number } & PaperProps) {
       ) : (
         <VillageInfo village={place as Village} />
       )}
-      <Bookmark prefix="places" seed={seed} name={place.name} type={placeType} />
+      <Controls>
+        <CopyLink />
+        <Bookmark prefix="places" seed={seed} name={place.name} type={placeType} />
+      </Controls>
     </FLPaper>
   )
 }

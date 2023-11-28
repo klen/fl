@@ -1,4 +1,6 @@
 export * from "./AppList"
 export * from "./Bookmark"
+export * from "./Controls"
+export * from "./CopyLink"
 export * from "./DiceButton"
 export * from "./RollBlock"

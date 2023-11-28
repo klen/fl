@@ -4,7 +4,7 @@ import capitalize from "lodash/capitalize"
 import { Fragment } from "react"
 import { useTranslation } from "react-i18next"
 import { FLPaper } from "../layouts"
-import { AppList, Bookmark } from "../ui"
+import { AppList, Bookmark, Controls, CopyLink } from "../ui"
 
 export function DemonInfo({ seed, ...props }: { seed: number } & PaperProps) {
   const { t } = useTranslation()
@@ -79,7 +79,10 @@ export function DemonInfo({ seed, ...props }: { seed: number } & PaperProps) {
           ))}
         </AppList>
       </Stack>
-      <Bookmark prefix="demons" seed={seed} name={demon.name} />
+      <Controls>
+        <CopyLink />
+        <Bookmark prefix="demons" seed={seed} name={demon.name} />
+      </Controls>
     </FLPaper>
   )
 }

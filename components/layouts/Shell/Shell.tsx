@@ -109,10 +109,10 @@ function FavoritesLink() {
     <ClientSide>
       <NavLink active={opened} onClick={open} label={t("Favorites")} leftSection={<IconHeart />} />
       <Drawer
+        size="md"
+        padding="md"
         opened={opened}
         onClose={close}
-        padding="md"
-        size="md"
         position="right"
         title={t("Favorites")}
       >

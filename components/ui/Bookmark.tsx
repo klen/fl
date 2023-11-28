@@ -22,9 +22,6 @@ export function Bookmark({
       <ActionIcon
         size="lg"
         variant="transparent"
-        pos="absolute"
-        top={0}
-        right={0}
         onClick={() => {
           setBookmark(bookmark ? undefined : props)
         }}

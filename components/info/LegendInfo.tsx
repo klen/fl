@@ -1,7 +1,7 @@
 import { Legend } from "@/generate/legends/legend"
 import { PaperProps, Stack, Text, Title } from "@mantine/core"
 import { FLPaper } from "../layouts"
-import { Bookmark } from "../ui"
+import { Bookmark, Controls, CopyLink } from "../ui"
 
 export function LegendInfo({ seed, ...props }: { seed: number } & PaperProps) {
   const legend = new Legend(seed)
@@ -24,7 +24,10 @@ export function LegendInfo({ seed, ...props }: { seed: number } & PaperProps) {
           {legend.find} и {legend.enemy}.
         </Text>
       </Stack>
-      <Bookmark prefix="legends" seed={seed} name={legend.subject} />
+      <Controls>
+        <CopyLink />
+        <Bookmark prefix="legends" seed={seed} name={legend.subject} />
+      </Controls>
     </FLPaper>
   )
 }

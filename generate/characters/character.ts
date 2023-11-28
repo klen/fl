@@ -1,3 +1,6 @@
+import { TTableItem } from "@/types"
+import { moneyText } from "@/utils"
+import { findLairValuedTable } from "../finds"
 import { Item } from "../proto"
 import { selectFromTable } from "../utils"
 import {
@@ -18,6 +21,7 @@ import human1 from "./human1.json"
 import human2 from "./human2.json"
 import human3 from "./human3.json"
 import Hunter from "./hunter.json"
+import meet from "./meet.json"
 import Minstrel from "./minstrel.json"
 import orc from "./orc.json"
 import Peddler from "./peddler.json"
@@ -68,6 +72,9 @@ export class Character extends Item {
   eventDesc: string
   items: string[]
 
+  meet: string
+  meetDesc: string
+
   constructor(seed: number) {
     super(seed)
 
@@ -95,15 +102,28 @@ export class Character extends Item {
     ]
 
     const profEvents = events[this.profession]
-    if (profEvents) {
-      const event = profEvents[this.rollDice("d6") - 1]
-      this.event = event.name
-      this.eventDesc = event.desc
-      Object.keys(event.skills).forEach((skill) => {
-        this.skills[skill] = (this.skills[skill] || 0) + event.skills[skill]
-      })
-      this.talents = [...this.talents, ...event.talents]
-      this.items = event.items
-    }
+    const event = profEvents[this.rollDice("d6") - 1]
+    this.event = event.name
+    this.eventDesc = event.desc
+    Object.keys(event.skills).forEach((skill) => {
+      this.skills[skill] = (this.skills[skill] || 0) + event.skills[skill]
+    })
+    this.talents = [...this.talents, ...event.talents]
+    this.items = event.items.map((item) => {
+      if (item == "special-find") {
+        let itemRoll = this.rollDice("d66")
+        while (itemRoll < 32) {
+          itemRoll = this.rollDice("d66")
+        }
+        const find = selectFromTable(findLairValuedTable, itemRoll)
+        const coins = this.randomFromRange(find.priceRange) * find.priceMulti
+        return `${find.desc} (${moneyText(coins)})`
+      }
+      return item
+    })
+
+    const m = selectFromTable(meet as TTableItem<any>[], this.rollDice("d66"))
+    this.meet = m.name
+    this.meetDesc = m.desc
   }
 }

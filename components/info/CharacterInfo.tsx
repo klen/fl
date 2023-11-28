@@ -4,7 +4,7 @@ import capitalize from "lodash/capitalize"
 import { Fragment } from "react"
 import { useTranslation } from "react-i18next"
 import { FLPaper } from "../layouts"
-import { Bookmark } from "../ui"
+import { Bookmark, Controls, CopyLink } from "../ui"
 
 export function CharacterInfo({ seed, ...props }: { seed: number } & PaperProps) {
   const { t } = useTranslation()
@@ -80,13 +80,19 @@ export function CharacterInfo({ seed, ...props }: { seed: number } & PaperProps)
             {character.items.map((item, idx) => (
               <Fragment key={item}>
                 {idx ? <i className="ra ra-diamonds" /> : null}
-                <Text>{t(capitalize(item))}</Text>
+                <Text>{capitalize(item)}</Text>
               </Fragment>
             ))}
           </Group>
         </Stack>
+        <Text mt="xs">
+          <b>{character.meet}</b>: {character.meetDesc}
+        </Text>
       </Stack>
-      <Bookmark prefix="characters" seed={seed} name={name} />
+      <Controls>
+        <CopyLink />
+        <Bookmark prefix="characters" seed={seed} name={name} />
+      </Controls>
     </FLPaper>
   )
 }

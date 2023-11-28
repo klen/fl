@@ -1,5 +1,4 @@
 .FLPaper {
   border: 22px solid transparent;
   border-image: url("/bg/document-bg-large.png") 30 round;
-  overflow-y: auto;
 }
