@@ -72,6 +72,19 @@ export function CharacterInfo({ seed, ...props }: { seed: number } & PaperProps)
             ))}
           </Group>
         </Stack>
+        <Stack gap="xs">
+          <Title order={3}>
+            <i className="ra ra-lg ra-potion" /> {t("Items")}
+          </Title>
+          <Group gap="sm">
+            {character.items.map((item, idx) => (
+              <Fragment key={item}>
+                {idx ? <i className="ra ra-diamonds" /> : null}
+                <Text>{t(capitalize(item))}</Text>
+              </Fragment>
+            ))}
+          </Group>
+        </Stack>
       </Stack>
       <Bookmark prefix="characters" seed={seed} name={name} />
     </FLPaper>

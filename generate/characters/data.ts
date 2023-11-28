@@ -1,17 +1,17 @@
 import { parseTable } from "../utils"
 
 const characterRaceData = `
-range;type;desc
-11-22;human1;Человек из Ольховых земель
-23-31;human2;Человек из Аслена
-32-34;human3;Человек-скиталец
-35-41;half-elf;Полуэльф
-42-44;halfling;Полурослик
-45-52;goblin;Гоблин
-53-56;orc;Орк
-61-62;wolfkin;Полуволк
-63-64;dwarf;Гном
-65-66;elf;Эльф
+range;type;desc;talent
+11-22;human1;Человек из Ольховых земель;Adaptive
+23-31;human2;Человек из Аслена;Adaptive
+32-34;human3;Человек-скиталец;Adaptive
+35-41;half-elf;Полуэльф;Psychic power
+42-44;halfling;Полурослик;Hard to catch
+45-52;goblin;Гоблин;Nocturnal
+53-56;orc;Орк;Unbreakable
+61-62;wolfkin;Полуволк;Hunting instincts
+63-64;dwarf;Гном;True grit
+65-66;elf;Эльф;Inner peace
 `.trim()
 
 export const characterRace = parseTable(characterRaceData)

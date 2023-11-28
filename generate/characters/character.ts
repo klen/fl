@@ -66,12 +66,14 @@ export class Character extends Item {
   talents: string[]
   event: string
   eventDesc: string
+  items: string[]
 
   constructor(seed: number) {
     super(seed)
 
     const kin = selectFromTable(characterRace, this.rollDice("d66"))
     this.kin = kin.desc
+    this.talents = [kin.talent]
 
     this.profession = selectFromTable(characterProfession, this.rollDice("d66")).name
 
@@ -84,6 +86,7 @@ export class Character extends Item {
     this.childhoodDesc = childhood.desc
 
     this.talents = [
+      ...this.talents,
       `Path of ${
         this.profession == "Sorcerer"
           ? selectFromTable(characterTalentSorcerer, this.rollDice("d8")).name
@@ -99,7 +102,8 @@ export class Character extends Item {
       Object.keys(event.skills).forEach((skill) => {
         this.skills[skill] = (this.skills[skill] || 0) + event.skills[skill]
       })
-      this.talents = this.talents.concat(event.talents)
+      this.talents = [...this.talents, ...event.talents]
+      this.items = event.items
     }
   }
 }
