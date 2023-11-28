@@ -77,6 +77,12 @@ export function Shell({ children }: PropsWithChildren) {
           active={pathname.startsWith("/legends")}
           leftSection={<i className="ra ra-scroll-unfurled" />}
         />
+        <NavLink
+          href="/characters"
+          label={t("Characters")}
+          active={pathname.startsWith("/characters")}
+          leftSection={<i className="ra ra-player" />}
+        />
         {!sm && <Divider mt="auto" />}
         <FavoritesLink />
         <NavLink

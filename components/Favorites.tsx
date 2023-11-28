@@ -11,6 +11,7 @@ export function Favorites() {
   const demons = value.demons || {}
   const places = value.places || {}
   const legends = value.legends || {}
+  const characters = value.characters || {}
 
   return (
     <Stack>
@@ -59,6 +60,18 @@ export function Favorites() {
             {Object.keys(legends).map((seed) => (
               <List.Item key={seed}>
                 <Anchor href={`/legends#${seed}`}>{capitalize(legends[seed].name)}</Anchor>
+              </List.Item>
+            ))}
+          </List>
+        </Stack>
+      )}
+      {Object.keys(characters).length > 0 && (
+        <Stack gap="xs">
+          <Title order={3}>{t("Characters")}</Title>
+          <List>
+            {Object.keys(characters).map((seed) => (
+              <List.Item key={seed}>
+                <Anchor href={`/characters#${seed}`}>{capitalize(characters[seed].name)}</Anchor>
               </List.Item>
             ))}
           </List>

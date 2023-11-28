@@ -35,7 +35,7 @@ range;name
 25-32;Rogue
 33-36;Rider
 41-44;Druid
-45-53;Sorceror
+45-53;Sorcerer
 54-62;Hunter
 63-66;Peddler 
 `.trim()
@@ -51,7 +51,7 @@ range;Minstrel;Fighter;Rogue;Rider;Druid;Hunter;Peddler
 
 export const characterTalent = parseTable(characterTalentData)
 
-const characterTalentSorcerorData = `
+const characterTalentSorcererData = `
 range;name
 1-2;blood
 3-4;death
@@ -59,4 +59,4 @@ range;name
 7-8;stone
 `.trim()
 
-export const characterTalentSorceror = parseTable(characterTalentSorcerorData)
+export const characterTalentSorcerer = parseTable(characterTalentSorcererData)

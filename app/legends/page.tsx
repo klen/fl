@@ -1,8 +1,7 @@
 "use client"
 
-import { DiceButton } from "@/components"
+import { DiceButton, LegendInfo } from "@/components"
 import ClientSide from "@/components/layouts/ClientSide"
-import { LegendInfo } from "@/components/legend"
 import { useSeed } from "@/utils"
 import { Center, Stack } from "@mantine/core"
 import { parseInt } from "lodash"

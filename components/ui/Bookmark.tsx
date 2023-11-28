@@ -20,15 +20,16 @@ export function Bookmark({
       withArrow
     >
       <ActionIcon
+        size="lg"
         variant="transparent"
         pos="absolute"
         top={0}
         right={0}
         onClick={() => {
-          setBookmark(bookmark ? false : props)
+          setBookmark(bookmark ? undefined : props)
         }}
       >
-        {bookmark ? <IconHeartFilled /> : <IconHeart />}
+        {bookmark ? <IconHeartFilled size={32} /> : <IconHeart size={32} />}
       </ActionIcon>
     </Tooltip>
   )
