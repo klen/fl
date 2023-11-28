@@ -15,16 +15,15 @@ export function Bookmark({
 
   return (
     <Tooltip
-      label={bookmark ? "Убрать из избранного" : "Добавить в избранное"}
-      position="left"
       withArrow
+      position="left"
+      label={bookmark ? "Убрать из избранного" : "Добавить в избранное"}
     >
       <ActionIcon
         size="lg"
         variant="transparent"
-        onClick={() => {
-          setBookmark(bookmark ? undefined : props)
-        }}
+        color={bookmark ? "dark" : "gray"}
+        onClick={() => setBookmark(bookmark ? undefined : props)}
       >
         {bookmark ? <IconHeartFilled size={32} /> : <IconHeart size={32} />}
       </ActionIcon>

@@ -1,5 +1,5 @@
 import { Character } from "@/generate"
-import { Group, PaperProps, Stack, Text, Title } from "@mantine/core"
+import { Divider, Group, PaperProps, Stack, Text, Title } from "@mantine/core"
 import capitalize from "lodash/capitalize"
 import { Fragment } from "react"
 import { useTranslation } from "react-i18next"
@@ -22,6 +22,7 @@ export function CharacterInfo({ seed, ...props }: { seed: number } & PaperProps)
         <Text>
           <b>{character.event}</b>: {character.eventDesc}
         </Text>
+        <Divider />
         <Stack gap="xs">
           <Title order={3}>
             <i className="ra ra-muscle-fat ra-lg" /> {t("Attributes")}
@@ -85,6 +86,7 @@ export function CharacterInfo({ seed, ...props }: { seed: number } & PaperProps)
             ))}
           </Group>
         </Stack>
+        <Divider />
         <Text mt="xs">
           <b>{character.meet}</b>: {character.meetDesc}
         </Text>

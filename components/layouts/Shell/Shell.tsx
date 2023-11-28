@@ -1,6 +1,7 @@
 "use client"
 
 import { Favorites } from "@/components/Favorites"
+import { useStorage } from "@/utils"
 import {
   AppShell,
   AppShellHeader,
@@ -15,7 +16,7 @@ import {
   Title,
 } from "@mantine/core"
 import { useDisclosure, useMediaQuery } from "@mantine/hooks"
-import { IconHeart } from "@tabler/icons-react"
+import { IconHeart, IconHeartFilled } from "@tabler/icons-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { PropsWithChildren } from "react"
@@ -84,7 +85,9 @@ export function Shell({ children }: PropsWithChildren) {
           leftSection={<i className="ra ra-player" />}
         />
         {!sm && <Divider mt="auto" />}
-        <FavoritesLink />
+        <ClientSide>
+          <FavoritesLink />
+        </ClientSide>
         <NavLink
           href="/"
           label={t("About")}
@@ -104,10 +107,17 @@ export function Shell({ children }: PropsWithChildren) {
 function FavoritesLink() {
   const { t } = useTranslation()
   const [opened, { open, close }] = useDisclosure(false)
+  const value = useStorage()[0]
+  const hasFavorites = Object.keys(value).length > 0
 
   return (
-    <ClientSide>
-      <NavLink active={opened} onClick={open} label={t("Favorites")} leftSection={<IconHeart />} />
+    <>
+      <NavLink
+        active={opened}
+        onClick={open}
+        label={t("Favorites")}
+        leftSection={hasFavorites ? <IconHeartFilled /> : <IconHeart />}
+      />
       <Drawer
         size="md"
         padding="md"
@@ -118,6 +128,6 @@ function FavoritesLink() {
       >
         <Favorites />
       </Drawer>
-    </ClientSide>
+    </>
   )
 }

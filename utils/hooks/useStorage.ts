@@ -11,13 +11,10 @@ export function useStorage({ prefix, seed }: { prefix?: string; seed?: string | 
   return [
     (value[prefix] || {})[seed],
     (newValue: any) => {
-      setValue({
-        ...value,
-        [prefix]: {
-          ...value[prefix],
-          [seed]: newValue,
-        },
-      })
+      if (newValue) return setValue({ ...value, [prefix]: { ...value[prefix], [seed]: newValue } })
+      delete value[prefix][seed]
+      if (Object.keys(value[prefix]).length === 0) delete value[prefix]
+      return setValue({ ...value })
     },
   ]
 }

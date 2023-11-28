@@ -12,7 +12,7 @@ export function CopyLink() {
       <ActionIcon
         size="lg"
         variant="transparent"
-        color={clipboard.copied ? "gray" : "dark"}
+        color={clipboard.copied ? "red" : "gray"}
         onClick={() => clipboard.copy(window.location.href)}
       >
         <IconShare2 size={32} />
