@@ -67,11 +67,11 @@ export function DemonInfo({ seed, ...props }: { seed: number } & PaperProps) {
         <AppList title="Атаки" icon={<i className="ra ra-lg" />}>
           {demon.attacks.map((attack) => (
             <Text key={attack.name}>
-              {attack.name}:{" "}
+              {attack.name} ({attack.distance.toLowerCase()}):{" "}
               {attack.dices != "0" ? (
                 <Text span>
-                  ({attack.dices}
-                  <i className="ra ra-perspective-dice-six" />)
+                  {attack.dices}
+                  <i className="ra ra-perspective-dice-six" />
                 </Text>
               ) : null}
               &nbsp;{attack.damage.toLowerCase()}

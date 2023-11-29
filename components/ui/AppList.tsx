@@ -1,11 +1,12 @@
-import { Box, Group, List, Title } from "@mantine/core"
+import { Box, Group, List, ListProps, Title } from "@mantine/core"
 import { PropsWithChildren, ReactNode } from "react"
 
 export function AppList({
   title,
   icon,
   children,
-}: PropsWithChildren<{ title: string; icon?: ReactNode }>) {
+  ...props
+}: PropsWithChildren<{ title: string; icon?: ReactNode } & ListProps>) {
   return (
     <Box>
       {title && (
@@ -14,7 +15,7 @@ export function AppList({
           <Title order={3}>{title}</Title>
         </Group>
       )}
-      <List px="sm">
+      <List px="sm" {...props}>
         {Array.isArray(children) ? (
           children.map((c, idx) => c && <List.Item key={idx}>{c}</List.Item>)
         ) : (

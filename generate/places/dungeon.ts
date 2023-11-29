@@ -10,6 +10,7 @@ import {
   dungeonSizeTableData,
   dungeonWeirdTableData,
 } from "./data"
+import { Room } from "./room"
 
 export class Dungeon extends Item {
   age: number
@@ -27,6 +28,7 @@ export class Dungeon extends Item {
   weirdeness: string[]
 
   population: string[]
+  rooms: Room[]
 
   constructor(seed: number) {
     super(seed)
@@ -81,5 +83,11 @@ export class Dungeon extends Item {
     this.weirdeness = takeMulti(dungeonWeirdTableData, () => this.rollDice("d66")).map(
       (w) => w.name
     )
+
+    this.rooms = Array.from({ length: this.size }, () => true).map((_, idx) => {
+      const seed = this.seed + idx + this.rollDice("d66")
+      return new Room(seed)
+    })
+    console.log(this)
   }
 }

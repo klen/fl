@@ -2,7 +2,7 @@
 
 body {
   line-height: 1.5;
-  background: #fff url('/bg/fl-map_en.png') center center no-repeat;
+  background: #fff url('/bg/fl-map_en.png') center center repeat-y;
   background-size: cover;
   &:before {
     content: '';

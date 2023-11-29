@@ -182,3 +182,51 @@ range;name
 `.trim()
 
 export const dungeonWeirdTableData = parseTable<{ name: string }>(dungeonWeirdData)
+
+const roomTypeData = `
+range;type
+1-2;corridor
+3-4;room
+5-5;hall
+6-6;stairway
+`.trim()
+
+export const roomTypeTableData = parseTable<{ type: string }>(roomTypeData)
+
+const roomDoorData = `
+range;num;state
+1-2;1;wide open
+3-3;2;not locked
+4-4;3;blocked
+5-5;4;locked
+6-6;0;with a trap
+`.trim()
+
+export const roomDoorTableData = parseTable<{ num: number; state: string }>(roomDoorData).map(
+  (item) => ({
+    ...item,
+    data: {
+      ...item.data,
+      num: parseInt(item.data.num as unknown as string),
+    },
+  })
+)
+
+const roomContentsData = `
+range;type
+1-3;empty
+4-5;entity
+6-6;trap
+`.trim()
+
+export const roomContentsTableData = parseTable<{ type: string }>(roomContentsData)
+
+const roomTreasureData = `
+range;type
+1-1;sarcophagus
+2-2;chest
+3-4;simple find
+5-6;valued find
+`.trim()
+
+export const roomTreasureTableData = parseTable<{ type: string }>(roomTreasureData)

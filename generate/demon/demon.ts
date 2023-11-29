@@ -59,10 +59,19 @@ export class Demon extends Item {
       }
     })
     const attacks = takeMulti(demonAttack, roll)
-    this.attacks = attacks.map((a) => ({
-      ...a,
-      dices: this.rollDices(a.dices).toString(),
-    }))
+    this.attacks = attacks.map((a) => {
+      let damage = a.damage
+      if (damage.includes("|")) {
+        const [type, ...values] = damage.split("|")
+        const value = values[this.rollDice("d6") - 1]
+        damage = `${type} ${value}`
+      }
+      return {
+        ...a,
+        damage,
+        dices: this.rollDices(a.dices).toString(),
+      }
+    })
   }
 }
 
