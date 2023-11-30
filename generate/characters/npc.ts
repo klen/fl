@@ -65,9 +65,10 @@ export class NPC extends Item {
   }
 }
 
-const womanRate = {
-  orc: 12,
-  goblin: 10,
-  gnome: 8,
-  wolfkin: 6,
+const womanRate: Partial<Record<TRace, number>> = {
+  orc: 20,
+  goblin: 14,
+  dwarf: 10,
+  wolfkin: 8,
+  halfling: 6,
 }
