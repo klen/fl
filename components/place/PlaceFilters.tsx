@@ -1,10 +1,11 @@
 "use client"
 
-import { getSeed, mulberry32, rollDice, useHash } from "@/utils"
+import { getSeed, rollDice, useHash } from "@/utils"
 import { Center, Checkbox, Group } from "@mantine/core"
 import capitalize from "lodash/capitalize"
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
+import seedrandom from "seedrandom"
 import { RollBlock } from "../ui"
 
 export function PlaceFilters({ seed }: { seed: number }) {
@@ -12,7 +13,7 @@ export function PlaceFilters({ seed }: { seed: number }) {
   const [enabled, setEnabled] = useState([true, true, true])
   const { t } = useTranslation()
 
-  const random = mulberry32(seed)
+  const random = seedrandom(seed)
   const typeRoll = rollDice("d6", random)
 
   return (
@@ -23,7 +24,7 @@ export function PlaceFilters({ seed }: { seed: number }) {
         onRoll={() => {
           while (true) {
             const seed = getSeed()
-            const random = mulberry32(seed)
+            const random = seedrandom(seed)
             const typeRoll = rollDice("d6", random)
 
             const eRoll = Math.floor((typeRoll - 1) / 2)

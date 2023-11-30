@@ -10,12 +10,12 @@ export default function Page() {
 
   return (
     <ClientSide>
-      {seed && (
+      {seed ? (
         <Stack>
-          <FindFilters seed={parseInt(seed)} />
-          <FindInfo seed={parseInt(seed)} mt="xl" />
+          <FindFilters seed={seed} />
+          <FindInfo seed={seed} mt="xl" />
         </Stack>
-      )}
+      ) : null}
     </ClientSide>
   )
 }

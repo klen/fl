@@ -1,10 +1,11 @@
 "use client"
 
-import { dice66ToRolls, getSeed, mulberry32, rollDice, useHash } from "@/utils"
+import { dice66ToRolls, getSeed, rollDice, useHash } from "@/utils"
 import { Center, Checkbox, Group, Stack, Text } from "@mantine/core"
 import capitalize from "lodash/capitalize"
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
+import seedrandom from "seedrandom"
 import { RollBlock } from "../ui"
 
 export function FindFilters({ seed }: { seed: number }) {
@@ -13,7 +14,7 @@ export function FindFilters({ seed }: { seed: number }) {
   const [typeEnabled, setTypeEnabled] = useState([true, true])
   const [valueEnabled, setValueEnabled] = useState([true, true, true])
 
-  const random = mulberry32(seed)
+  const random = seedrandom(seed)
   random()
   const dices = [
     rollDice("d6", random),
@@ -32,7 +33,7 @@ export function FindFilters({ seed }: { seed: number }) {
         onRoll={() => {
           while (true) {
             const seed = getSeed()
-            const random = mulberry32(seed)
+            const random = seedrandom(seed)
             random()
 
             const typeRoll = rollDice("d6", random)

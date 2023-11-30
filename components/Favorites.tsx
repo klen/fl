@@ -12,6 +12,7 @@ export function Favorites() {
   const places = value.places || {}
   const legends = value.legends || {}
   const characters = value.characters || {}
+  const npc = value.npc || {}
 
   return (
     <Stack>
@@ -67,11 +68,23 @@ export function Favorites() {
       )}
       {Object.keys(characters).length > 0 && (
         <Stack gap="xs">
-          <Title order={3}>{t("Characters")}</Title>
+          <Title order={3}>{t("Player characters")}</Title>
           <List>
             {Object.keys(characters).map((seed) => (
               <List.Item key={seed}>
                 <Anchor href={`/characters#${seed}`}>{capitalize(characters[seed].name)}</Anchor>
+              </List.Item>
+            ))}
+          </List>
+        </Stack>
+      )}
+      {Object.keys(npc).length > 0 && (
+        <Stack gap="xs">
+          <Title order={3}>{t("Master characters")}</Title>
+          <List>
+            {Object.keys(npc).map((seed) => (
+              <List.Item key={seed}>
+                <Anchor href={`/npc#${seed}`}>{capitalize(npc[seed].name)}</Anchor>
               </List.Item>
             ))}
           </List>

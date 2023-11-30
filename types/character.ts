@@ -17,3 +17,14 @@ export type TCharacter = {
   sex: TSex
   carrier?: string
 }
+
+export type TAttrs = {
+  strength: number
+  agility: number
+  wits: number
+  empathy: number
+}
+
+export type TSkills = {
+  [key: string]: number
+}

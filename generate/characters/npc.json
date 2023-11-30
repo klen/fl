@@ -1,0 +1,252 @@
+[
+  {
+    "type": "Bandit",
+    "attrs": {
+      "strength": 3,
+      "agility": 3,
+      "wits": 2,
+      "empathy": 2
+    },
+    "skills": {
+      "melee": 2,
+      "marksmanship": 1,
+      "survival": 1
+    },
+    "equipment": [
+      [
+        "палаш",
+        "топор"
+      ],
+      [
+        "праща",
+        "короткий лук"
+      ],
+      "кожаная броня",
+      "copper:d6",
+      "find:simple"
+    ]
+  },
+  {
+    "type": "Minstrel",
+    "attrs": {
+      "strength": 2,
+      "agility": 3,
+      "wits": 3,
+      "empathy": 4
+    },
+    "skills": {
+      "lore": 1,
+      "insight": 1,
+      "manipulation": 2,
+      "performance": 3
+    },
+    "equipment": [
+      "Музыкальный инструмент",
+      "кинжал",
+      "silver:d6",
+      "find:valuable"
+    ]
+  },
+  {
+    "type": "Rogue",
+    "attrs": {
+      "strength": 2,
+      "agility": 4,
+      "wits": 3,
+      "empathy": 3
+    },
+    "skills": {
+      "melee": 1,
+      "sleight of hand": 3,
+      "marksmanship": 1,
+      "move": 2,
+      "stealth": 2
+    },
+    "equipment": [
+      "кинжал",
+      "праща",
+      "кожаная броня",
+      "silver:d6",
+      "find:valuable"
+    ]
+  },
+  {
+    "type": "Rider",
+    "attrs": {
+      "strength": 3,
+      "agility": 4,
+      "wits": 3,
+      "empathy": 3
+    },
+    "skills": {
+      "melee": 2,
+      "survival": 1,
+      "animal handling": 3
+    },
+    "equipment": [
+      [
+        "палаш",
+        "короткий меч"
+      ],
+      "кинжал",
+      "усиленная кожаная броня",
+      "открытый шлем",
+      "find:simple"
+    ]
+  },
+  {
+    "type": "Priest",
+    "attrs": {
+      "strength": 3,
+      "agility": 3,
+      "wits": 4,
+      "empathy": 3
+    },
+    "skills": {
+      "lore": 2,
+      "healing": 1,
+      "manipulation": 2,
+      "performance": 1
+    },
+    "equipment": [
+      "посох",
+      "silver:d6",
+      "find:valuable"
+    ]
+  },
+  {
+    "type": "Sorcerer",
+    "attrs": {
+      "strength": 2,
+      "agility": 2,
+      "wits": 4,
+      "empathy": 3
+    },
+    "skills": {
+      "lore": 1
+    },
+    "equipment": [
+      "посох",
+      "гримуар",
+      "silver:d6",
+      "find:valuable"
+    ]
+  },
+  {
+    "type": "Hunter",
+    "attrs": {
+      "strength": 3,
+      "agility": 3,
+      "wits": 3,
+      "empathy": 3
+    },
+    "skills": {
+      "melee": 1,
+      "marksmanship": 3,
+      "survival": 2,
+      "scouting": 2,
+      "animal handling": 2
+    },
+    "equipment": [
+      "кинжал",
+      "длинный лук",
+      "кожаная броня",
+      "copper:2d6",
+      "find:simple"
+    ]
+  },
+  {
+    "type": "Druid",
+    "attrs": {
+      "strength": 2,
+      "agility": 3,
+      "wits": 4,
+      "empathy": 3
+    },
+    "skills": {
+      "lore": 2,
+      "healing": 1,
+      "survival": 1,
+      "scouting": 1,
+      "animal handling": 2
+    },
+    "equipment": [
+      "посох",
+      "silver:d6",
+      "find:valuable"
+    ]
+  },
+  {
+    "type": "Villager",
+    "attrs": {
+      "strength": 3,
+      "agility": 3,
+      "wits": 3,
+      "empathy": 3
+    },
+    "skills": {
+      "endurance": 1,
+      "crafting": 2
+    },
+    "equipment": [
+      "инструменты",
+      "copper:d6"
+    ]
+  },
+  {
+    "type": "Fighter",
+    "attrs": {
+      "strength": 4,
+      "agility": 3,
+      "wits": 3,
+      "empathy": 2
+    },
+    "skills": {
+      "melee": 2,
+      "endurance": 1,
+      "marksmanship": 2,
+      "survival": 1
+    },
+    "equipment": [
+      [
+        "боевой топор",
+        "палаш"
+      ],
+      [
+        "копье",
+        "длинный лук",
+        "тяжелый арбалет"
+      ],
+      [
+        "кожаная броня",
+        "кольчуга"
+      ],
+      "большой щит",
+      "открытый шлем",
+      "copper:2d6",
+      "find:simple"
+    ]
+  },
+  {
+    "type": "Peddler",
+    "attrs": {
+      "strength": 2,
+      "agility": 3,
+      "wits": 3,
+      "empathy": 4
+    },
+    "skills": {
+      "manipulation": 2,
+      "lore": 1,
+      "insight": 2
+    },
+    "equipment": [
+      [
+        "кинжал",
+        "короткий меч"
+      ],
+      "silver:2d6",
+      "find:valuable"
+    ]
+  }
+]

@@ -88,6 +88,5 @@ export class Dungeon extends Item {
       const seed = this.seed + idx + this.rollDice("d66")
       return new Room(seed)
     })
-    console.log(this)
   }
 }

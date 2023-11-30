@@ -1,6 +1,6 @@
 "use client"
 
-import { CharacterFilters, CharacterInfo } from "@/components"
+import { NPCFilters, NPCInfo } from "@/components"
 import ClientSide from "@/components/layouts/ClientSide"
 import { useSeed } from "@/utils"
 import { Stack } from "@mantine/core"
@@ -11,9 +11,9 @@ export default function Page() {
   return (
     <ClientSide>
       {seed ? (
-        <Stack>
-          <CharacterFilters seed={seed} />
-          <CharacterInfo seed={seed} mt="xl" />
+        <Stack gap="xl">
+          <NPCFilters />
+          <NPCInfo seed={seed} />
         </Stack>
       ) : null}
     </ClientSide>

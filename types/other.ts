@@ -4,3 +4,9 @@ export type TTableItem<T> = {
   range: [number, number]
   data: T
 }
+
+export type TMoney = {
+  gold?: number
+  silver?: number
+  copper?: number
+}

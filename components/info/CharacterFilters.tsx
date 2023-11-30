@@ -1,9 +1,10 @@
 import { selectFromTable } from "@/generate"
 import { characterProfession, characterRace } from "@/generate/characters/data"
-import { dice66ToRolls, getSeed, mulberry32, rollDice, useHash } from "@/utils"
+import { dice66ToRolls, getSeed, rollDice, useHash } from "@/utils"
 import { Center, Checkbox, Group, Stack } from "@mantine/core"
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
+import seedrandom from "seedrandom"
 import { RollBlock } from "../ui"
 
 export function CharacterFilters({ seed }: { seed: number }) {
@@ -32,7 +33,7 @@ export function CharacterFilters({ seed }: { seed: number }) {
     Peddler: true,
   })
 
-  const random = mulberry32(seed)
+  const random = seedrandom(seed)
   random()
   const rolls = [
     ...dice66ToRolls(rollDice("d66", random)),
@@ -48,7 +49,7 @@ export function CharacterFilters({ seed }: { seed: number }) {
         onRoll={() => {
           while (true) {
             const seed = getSeed()
-            const random = mulberry32(seed)
+            const random = seedrandom(seed)
             random()
             const kinRoll = rollDice("d66", random)
             const kin = selectFromTable(characterRace, kinRoll)

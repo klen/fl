@@ -30,6 +30,9 @@ export default function Page() {
               <List.Item>
                 Генерация <Link href="/characters">персонажей игроков</Link>
               </List.Item>
+              <List.Item>
+                Генерация <Link href="/npc">персонажей мастера</Link>
+              </List.Item>
             </List>
           </Stack>
           <Stack gap="xs">

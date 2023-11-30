@@ -1,25 +1,25 @@
 import { parseTable } from "../utils"
 
 const findTypeData = `
-range;type;desc
-1-3;carried;при себе
-4-6;lair;в логове
+range;type
+1-3;carried
+4-6;in lair
 `.trim()
 
 export const findTypeTable = parseTable(findTypeData)
 
 const findRarityData = `
-range;rarity;desc
-1-2;simple;Простая находка
-3-4;valuable;Ценная находка
-5-6;precious;Роскошная находка
+range;type
+1-2;simple
+3-4;valuable
+5-6;precious
 `.trim()
 
 export const findRarityTable = parseTable(findRarityData)
 
 const findCarriedSimpleData = `
 range;desc;priceRange;priceMulti;weight
-11-31;Медные монеты;2-12;1;крошечный
+11-31;Money;2-12;1;крошечный
 32;Костяная статуэтка;2-12;1;легкий
 33;Кусок янтаря;2-12;1;крошечный
 34;Бронзовая пряжка для ремня;2-12;1;легкий
@@ -55,7 +55,7 @@ export const findCarriedSimpleTable = parseTable(findCarriedSimpleData).map((ite
 
 const findLairSimpleData = `
 range;desc;priceRange;priceMulti;weight
-11-31;Медные монеты;4-24;1;крошечный
+11-31;Money;4-24;1;крошечный
 32;Медная чаша;3-18;1;легкий
 33;Медная тарелка;3-18;1;средний
 34;Медная кружка;3-18;1;легкий
@@ -91,7 +91,7 @@ export const findLairSimpleTable = parseTable(findLairSimpleData).map((item) => 
 
 const findCarriedValued = `
 range;desc;priceRange;priceMulti;weight
-11-31;Серебряные монеты;3-18;10;крошечный
+11-31;Money;3-18;10;крошечный
 32;Серебрянная шкатулка;2-12;10;легкий
 33;Жемчужина;2-12;10;крошечный
 34;Серебрянная чаша;2-12;10;легкий
@@ -127,7 +127,7 @@ export const findCarriedValuedTable = parseTable(findCarriedValued).map((item) =
 
 const findLairValued = `
 range;desc;priceRange;priceMulti;weight
-11-31;Серебряные монеты;4-24;10;крошечный
+11-31;Money;4-24;10;крошечный
 32;Серебрянный медальон;3-18;10;легкий
 33;Маленький серебрянный сундучок;3-18;10;легкий
 34;Картина;3-18;10;тяжелый
@@ -163,7 +163,7 @@ export const findLairValuedTable = parseTable(findLairValued).map((item) => ({
 
 const findCarriedPrecious = `
 range;desc;priceRange;priceMulti;weight
-11-31;Золотые монеты;1-6;100;крошечный
+11-31;Money;1-6;100;крошечный
 32;Золотая статуэтка;5-30;10;легкий
 33;Жемчужное ожерелье;5-30;10;крошечный
 34;Золотая чаша;5-30;10;легкий
@@ -199,7 +199,7 @@ export const findCarriedPreciousTable = parseTable(findCarriedPrecious).map((ite
 
 const findLairPrecious = `
 range;desc;priceRange;priceMulti;weight
-11-31;Россыпь монет;124-744;1;крошечный
+11-31;Money;124-744;1;крошечный
 32;Позолоченное ожерелье;2-12;100;легкий
 33;Роскошный гобелен;2-12;100;3
 34;Расшитый ковер;2-12;100;4

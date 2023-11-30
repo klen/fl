@@ -1,4 +1,4 @@
-import { Character } from "@/generate"
+import { NPC } from "@/generate"
 import { Divider, Group, PaperProps, Stack, Text, Title } from "@mantine/core"
 import capitalize from "lodash/capitalize"
 import { Fragment } from "react"
@@ -6,23 +6,23 @@ import { useTranslation } from "react-i18next"
 import { FLPaper } from "../layouts"
 import { Bookmark, Controls, CopyLink } from "../ui"
 
-export function CharacterInfo({ seed, ...props }: { seed: number } & PaperProps) {
+export function NPCInfo({ seed, ...props }: { seed: number } & PaperProps) {
   const { t } = useTranslation()
-  const character = new Character(seed)
-  const name = `${t(
-    character.profession
-  )} ${character.kin.toLowerCase()} (${character.childhood.toLowerCase()})`
+  const npc = new NPC(seed)
+  const name = `${npc.name} ${npc.type}`
 
   return (
     <FLPaper p="md" pos="relative" {...props}>
       <Stack>
         <Title>{name}</Title>
-        <Text>{character.childhoodDesc}</Text>
         <Text>
-          <b>{t("Birthplace")}</b>: {character.birthPlace}
+          {t(capitalize(npc.race))}-{(npc.sex ? t("Man") : t("Woman")).toLowerCase()}
         </Text>
         <Text>
-          <b>{character.event}</b>: {character.eventDesc}
+          {t("Feature")}: {npc.feature}
+        </Text>
+        <Text>
+          {t("Quirk")}: {npc.weirdness}
         </Text>
         <Divider />
         <Stack gap="xs">
@@ -31,19 +31,19 @@ export function CharacterInfo({ seed, ...props }: { seed: number } & PaperProps)
           </Title>
           <Group gap="sm">
             <Text>
-              {t("Strength")}: <b>{character.attrs.strength}</b>
+              {t("Strength")}: <b>{npc.attrs.strength}</b>
             </Text>
             <i className="ra ra-diamonds" />
             <Text>
-              {t("Agility")}: <b>{character.attrs.agility}</b>
+              {t("Agility")}: <b>{npc.attrs.agility}</b>
             </Text>
             <i className="ra ra-diamonds" />
             <Text>
-              {t("Wits")}: <b>{character.attrs.wits}</b>
+              {t("Wits")}: <b>{npc.attrs.wits}</b>
             </Text>
             <i className="ra ra-diamonds" />
             <Text>
-              {t("Empathy")}: <b>{character.attrs.empathy}</b>
+              {t("Empathy")}: <b>{npc.attrs.empathy}</b>
             </Text>
           </Group>
         </Stack>
@@ -52,7 +52,7 @@ export function CharacterInfo({ seed, ...props }: { seed: number } & PaperProps)
             <i className="ra ra-lg ra-campfire" /> {t("Skills")}
           </Title>
           <Group gap="sm">
-            {Object.entries(character.skills).map(([skill, value], idx) => (
+            {Object.entries(npc.skills).map(([skill, value], idx) => (
               <Fragment key={skill}>
                 {idx ? <i className="ra ra-diamonds" /> : null}
                 <Text>
@@ -64,23 +64,10 @@ export function CharacterInfo({ seed, ...props }: { seed: number } & PaperProps)
         </Stack>
         <Stack gap="xs">
           <Title order={3}>
-            <i className="ra ra-lg ra-feather-wing" /> {t("Talents")}
-          </Title>
-          <Group gap="sm">
-            {character.talents.map((talent, idx) => (
-              <Fragment key={talent}>
-                {idx ? <i className="ra ra-diamonds" /> : null}
-                <Text>{t(capitalize(talent))}</Text>
-              </Fragment>
-            ))}
-          </Group>
-        </Stack>
-        <Stack gap="xs">
-          <Title order={3}>
             <i className="ra ra-lg ra-potion" /> {t("Items")}
           </Title>
           <Group gap="sm">
-            {character.items.map((item, idx) => (
+            {npc.items.map((item, idx) => (
               <Fragment key={item}>
                 {idx ? <i className="ra ra-diamonds" /> : null}
                 <Text>{capitalize(item)}</Text>
@@ -88,14 +75,10 @@ export function CharacterInfo({ seed, ...props }: { seed: number } & PaperProps)
             ))}
           </Group>
         </Stack>
-        <Divider />
-        <Text mt="xs">
-          <b>{character.meet}</b>: {character.meetDesc}
-        </Text>
       </Stack>
       <Controls>
         <CopyLink />
-        <Bookmark prefix="characters" seed={seed} name={name} />
+        <Bookmark prefix="npc" seed={seed} name={name} />
       </Controls>
     </FLPaper>
   )

@@ -226,7 +226,7 @@ range;type
 1-1;sarcophagus
 2-2;chest
 3-4;simple find
-5-6;valued find
+5-6;valuable find
 `.trim()
 
 export const roomTreasureTableData = parseTable<{ type: string }>(roomTreasureData)

@@ -9,14 +9,14 @@ export default function Page() {
 
   return (
     <ClientSide>
-      {seed && (
+      {seed ? (
         <Stack>
-          <DemonInfo seed={parseInt(seed)} mt="xl" />
+          <DemonInfo seed={seed} mt="xl" />
           <Center>
             <DiceButton rolls={[6]} onClick={reSeed} />
           </Center>
         </Stack>
-      )}
+      ) : null}
     </ClientSide>
   )
 }

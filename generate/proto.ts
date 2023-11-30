@@ -1,5 +1,6 @@
 import { TDice, TTableItem } from "@/types"
-import { mulberry32, rollDice, rollDices } from "@/utils"
+import { rollDice, rollDices } from "@/utils"
+import seedrandom from "seedrandom"
 import { choiceFromTable } from "./utils"
 
 export class Item {
@@ -7,7 +8,7 @@ export class Item {
 
   constructor(public seed: number) {
     this.seed = seed
-    this.random = mulberry32(seed)
+    this.random = seedrandom(seed)
     this.random()
   }
 

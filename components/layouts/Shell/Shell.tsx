@@ -80,9 +80,15 @@ export function Shell({ children }: PropsWithChildren) {
         />
         <NavLink
           href="/characters"
-          label={t("Characters")}
+          label={t("Player characters")}
           active={pathname.startsWith("/characters")}
           leftSection={<i className="ra ra-player" />}
+        />
+        <NavLink
+          href="/npc"
+          label={t("Master characters")}
+          active={pathname.startsWith("/npc")}
+          leftSection={<i className="ra ra-player-king" />}
         />
         {!sm && <Divider mt="auto" />}
         <ClientSide>

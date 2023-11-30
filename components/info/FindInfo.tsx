@@ -1,20 +1,23 @@
 import { Find } from "@/generate"
 import { PaperProps, Stack, Text, Title } from "@mantine/core"
+import { capitalize } from "lodash"
+import { useTranslation } from "react-i18next"
 import { MoneyLine } from "../common"
 import { FLPaper } from "../layouts"
 import { Bookmark, Controls, CopyLink } from "../ui"
 
 export function FindInfo({ seed, ...props }: { seed: number } & PaperProps) {
+  const { t } = useTranslation()
   const find = new Find(seed)
   return (
     <FLPaper p="md" pos="relative" {...props}>
       <Stack gap="xs">
         <Title>
           <i className="ra  ra-diamond" style={{ marginRight: 8 }} />
-          {find.desc}
+          {find.isMoney ? t("Money") : find.desc}
         </Title>
         <Title order={3}>
-          {find.rarity} ({find.type})
+          {t(capitalize(find.rarity))} ({t(capitalize(find.type)).toLowerCase()})
         </Title>
         <Text>
           Стоимость: <MoneyLine num={find.price} />

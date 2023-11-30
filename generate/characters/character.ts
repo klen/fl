@@ -1,5 +1,5 @@
-import { TTableItem } from "@/types"
-import { moneyText } from "@/utils"
+import { TAttrs, TSkills, TTableItem } from "@/types"
+import { money, moneyText } from "@/utils"
 import { findLairValuedTable } from "../finds"
 import { Item } from "../proto"
 import { selectFromTable } from "../utils"
@@ -59,13 +59,8 @@ export class Character extends Item {
   birthPlace: string
   childhood: string
   childhoodDesc: string
-  attrs: {
-    strength: number
-    agility: number
-    wits: number
-    empathy: number
-  }
-  skills: Record<string, number>
+  attrs: TAttrs
+  skills: TSkills
   profession: string
   talents: string[]
   event: string
@@ -117,7 +112,7 @@ export class Character extends Item {
         }
         const find = selectFromTable(findLairValuedTable, itemRoll)
         const coins = this.randomFromRange(find.priceRange) * find.priceMulti
-        return `${find.desc} (${moneyText(coins)})`
+        return `${find.desc} (${moneyText(money(coins))})`
       }
       return item
     })

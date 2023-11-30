@@ -1,3 +1,4 @@
+import { getSeed } from "@/utils"
 import { Item } from "../proto"
 import { selectFromTable } from "../utils"
 import {
@@ -26,16 +27,14 @@ export class Find extends Item {
     super(seed)
 
     const typeRoll = this.rollDice("d6")
-    const type = selectFromTable(findTypeTable, typeRoll)
-    this.type = type.desc
+    this.type = selectFromTable(findTypeTable, typeRoll).type
 
     const rarityRoll = this.rollDice("d6")
-    const rarity = selectFromTable(findRarityTable, rarityRoll)
-    this.rarity = rarity.desc
+    this.rarity = selectFromTable(findRarityTable, rarityRoll).type
 
     type TTables = typeof tables
     const table =
-      tables[type.type as keyof TTables][rarity.rarity as keyof TTables[keyof typeof tables]]
+      tables[this.type as keyof TTables][this.rarity as keyof TTables[keyof typeof tables]]
 
     const itemRoll = this.rollDice("d66")
     const item = selectFromTable(table, itemRoll)
@@ -48,6 +47,10 @@ export class Find extends Item {
     if (itemRoll > 31 && this.rollDice("d6") > 4)
       this.weird = selectFromTable(findWeirdnessTable, this.rollDice("d66"))
   }
+
+  get isMoney() {
+    return this.desc == "Money"
+  }
 }
 
 const tables = {
@@ -56,9 +59,31 @@ const tables = {
     valuable: findCarriedValuedTable,
     precious: findLairPreciousTable,
   },
-  lair: {
+  ["in lair"]: {
     simple: findLairSimpleTable,
     valuable: findLairValuedTable,
     precious: findLairPreciousTable,
   },
 }
+
+export function genFind({
+  rarity,
+  type,
+  seed,
+}: {
+  rarity?: TFindRarity
+  type?: TFindType
+  seed?: number
+}) {
+  seed = seed || getSeed()
+  while (true) {
+    seed += 1
+    const find = new Find(seed)
+    if (type && find.type != type) continue
+    if (rarity && find.rarity != rarity) continue
+    return find
+  }
+}
+
+export type TFindType = "carried" | "in lair"
+export type TFindRarity = "simple" | "valuable" | "precious"

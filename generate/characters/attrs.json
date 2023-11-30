@@ -1,0 +1,50 @@
+{
+  "human": {
+    "strength": 3,
+    "agility": 3,
+    "wits": 3,
+    "empathy": 3
+  },
+  "half-elf": {
+    "strength": 2,
+    "agility": 3,
+    "wits": 4,
+    "empathy": 4
+  },
+  "elf": {
+    "strength": 3,
+    "agility": 3,
+    "wits": 5,
+    "empathy": 2
+  },
+  "dwarf": {
+    "strength": 5,
+    "agility": 3,
+    "wits": 2,
+    "empathy": 2
+  },
+  "orc": {
+    "strength": 4,
+    "agility": 3,
+    "wits": 3,
+    "empathy": 2
+  },
+  "wolfkin": {
+    "strength": 4,
+    "agility": 4,
+    "wits": 2,
+    "empathy": 2
+  },
+  "goblin": {
+    "strength": 2,
+    "agility": 4,
+    "wits": 4,
+    "empathy": 2
+  },
+  "halfling": {
+    "strength": 3,
+    "agility": 4,
+    "wits": 3,
+    "empathy": 4
+  }
+}

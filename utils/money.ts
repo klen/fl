@@ -1,4 +1,6 @@
-export function money(copper: number) {
+import { TMoney } from "@/types"
+
+export function money(copper: number): TMoney {
   const gold = Math.floor(copper / 100)
   const silver = Math.floor((copper % 100) / 10)
   const copperRemainder = copper % 10
@@ -9,8 +11,8 @@ export function money(copper: number) {
   }
 }
 
-export function moneyText(copperCoins: number) {
-  const { gold, silver, copper } = money(copperCoins)
+export function moneyText(money: TMoney) {
+  const { gold, silver, copper } = money
   let res = ""
   if (gold > 0) res += `${gold}з `
   if (silver > 0) res += `${silver}с `
