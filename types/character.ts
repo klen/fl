@@ -28,3 +28,5 @@ export type TAttrs = {
 export type TSkills = {
   [key: string]: number
 }
+
+export type TAgeType = "young" | "adult" | "old"

@@ -22,6 +22,12 @@ export function CharacterInfo({ seed, ...props }: { seed: number } & PaperProps)
           <b>{t("Birthplace")}</b>: {character.birthPlace}
         </Text>
         <Text>
+          <b>{t("Age")}</b>: {t(character.age)}
+        </Text>
+        <Text>
+          <b>{t("Pride")}</b>: {t(character.pride)}
+        </Text>
+        <Text>
           <b>{character.event}</b>: {character.eventDesc}
         </Text>
         <Divider />
@@ -67,10 +73,18 @@ export function CharacterInfo({ seed, ...props }: { seed: number } & PaperProps)
             <i className="ra ra-lg ra-feather-wing" /> {t("Talents")}
           </Title>
           <Group gap="sm">
-            {character.talents.map((talent, idx) => (
+            {Object.entries(character.talents).map(([talent, level], idx) => (
               <Fragment key={talent}>
                 {idx ? <i className="ra ra-diamonds" /> : null}
-                <Text>{t(capitalize(talent))}</Text>
+                <Text>
+                  {t(capitalize(talent))}
+                  {level > 1 && (
+                    <Text span fw={500}>
+                      {" "}
+                      ({level})
+                    </Text>
+                  )}
+                </Text>
               </Fragment>
             ))}
           </Group>
