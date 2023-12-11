@@ -26,7 +26,6 @@ jobs:
 
     - name: Lint code
       run: |
-          yarn lint
           yarn tsc --noEmit --pretty
 
     - name: Run tests

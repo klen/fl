@@ -1,0 +1,4 @@
+.FLPaper {
+  border: 22px solid transparent;
+  border-image: url("/public/bg/document-bg-large.png") 30 round;
+}
