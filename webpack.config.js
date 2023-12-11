@@ -4,6 +4,7 @@ const path = require("path")
 const mode = process.env.NODE_ENV || "production"
 
 module.exports = {
+  mode,
   entry: "./src/index.tsx",
   devtool: mode == "development" && "inline-source-map",
   optimization: {

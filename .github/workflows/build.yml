@@ -18,9 +18,11 @@ jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
     permissions:
       contents: read
-      packages: write
+      pages: write
+      id-token: write
 
     steps:
       - name: Checkout repository
@@ -28,34 +30,15 @@ jobs:
         with:
           ref: ${{ github.event.workflow_run.head_branch }}
 
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@master
-      -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@master
-
-      - name: Log in to the Container registry
-        uses: docker/login-action@master
+      - name: Set up Node.JS
+        uses: actions/setup-node@main
         with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          cache: yarn
 
-      - name: Build and push Docker image
-        uses: docker/build-push-action@master
+      - name: Build
+        run: yarn webpack
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          context: .
-          file: assets/Dockerfile
-          push: true
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-          tags: |
-            ${{ env.REGISTRY }}/klen/fl:${{ github.event.workflow_run.head_branch }}
-          labels: |
-            org.opencontainers.image.title=${{ github.event.workflow_run.head_repository.name }}
-            org.opencontainers.image.description=${{ github.event.workflow_run.head_repository.description }}
-            org.opencontainers.image.source=${{ github.event.workflow_run.head_repository.url }}
-            org.opencontainers.image.version=${{ github.event.workflow_run.head_branch }}
-            org.opencontainers.image.revision=${{github.event.workflow_run.head_sha}}
-            org.label-schema.vcs-url=${{ github.event.workflow_run.head_repository.html_url }}
-            org.label-schema.build-date=${{github.event.workflow_run.created_at}}
+          path: ./dist
