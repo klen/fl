@@ -9,9 +9,30 @@ node_modules: package.json yarn.lock
 dev run: node_modules
 	NODE_ENV=development yarn webpack serve
 
-# Build
-# -----
+#  Bump version
+#  ------------
 
-.PHONY: build
-build: node_modules
-	yarn webpack
+.PHONY: release
+VPART ?= minor
+# target: release - Bump version
+release:
+	@git checkout develop
+	@git pull
+	@git checkout main
+	@git pull
+	@git merge develop
+	@bump2version $(VPART)
+	@git checkout develop
+	@git merge main
+	@git push --tags origin develop main
+
+.PHONY: minor
+minor: release
+
+.PHONY: patch
+patch:
+	make release VPART=patch
+
+.PHONY: major
+major:
+	make release VPART=major
