@@ -35,6 +35,9 @@ jobs:
         with:
           cache: yarn
 
+      - name: Setup dependencies
+        run: yarn
+
       - name: Build
         run: yarn webpack
 
