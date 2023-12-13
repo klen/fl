@@ -3,6 +3,7 @@
 import { FLPaper } from "@/components"
 import ClientSide from "@/components/layouts/ClientSide"
 import { version } from "@/utils/env"
+import { siteLink } from "@/utils/links"
 import { List, Stack, Text, Title } from "@mantine/core"
 import Link from "next/link"
 
@@ -16,22 +17,22 @@ export default function Page() {
             <Title order={2}>Возможности</Title>
             <List>
               <List.Item>
-                Генерация <Link href="/finds">находок</Link>
+                Генерация <Link href={siteLink("/finds")}>находок</Link>
               </List.Item>
               <List.Item>
-                Генерация <Link href="/place">точек интереса</Link>
+                Генерация <Link href={siteLink("/place")}>точек интереса</Link>
               </List.Item>
               <List.Item>
-                Генерация <Link href="/daemon">демонов</Link>
+                Генерация <Link href={siteLink("/daemon")}>демонов</Link>
               </List.Item>
               <List.Item>
-                Генерация <Link href="/legends">легенд</Link>
+                Генерация <Link href={siteLink("/legends")}>легенд</Link>
               </List.Item>
               <List.Item>
-                Генерация <Link href="/characters">персонажей игроков</Link>
+                Генерация <Link href={siteLink("/characters")}>персонажей игроков</Link>
               </List.Item>
               <List.Item>
-                Генерация <Link href="/npc">персонажей мастера</Link>
+                Генерация <Link href={siteLink("/npc")}>персонажей мастера</Link>
               </List.Item>
             </List>
           </Stack>

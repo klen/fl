@@ -22,6 +22,10 @@ test t: node_modules
 build: node_modules
 	yarn build
 
+.PHONY: serve
+serve:
+	python -m http.server 8080 --directory out
+
 #  Bump version
 #  ------------
 

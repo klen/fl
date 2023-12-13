@@ -3,7 +3,8 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  output: 'standalone',
+  output: 'export',
+  // output: 'standalone',
 };
 
 export default nextConfig;

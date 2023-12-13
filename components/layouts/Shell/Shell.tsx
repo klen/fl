@@ -22,6 +22,7 @@ import { usePathname } from "next/navigation"
 import { PropsWithChildren } from "react"
 import { useTranslation } from "react-i18next"
 import ClientSide from "../ClientSide"
+import { siteLink } from "@/utils/links"
 
 export function Shell({ children }: PropsWithChildren) {
   const pathname = usePathname()
@@ -55,37 +56,37 @@ export function Shell({ children }: PropsWithChildren) {
         )}
         <Divider />
         <NavLink
-          href="/place"
+          href={siteLink("/place")}
           label={t("Places")}
           active={pathname.startsWith("/place")}
           leftSection={<i className="ra ra-tower" />}
         />
         <NavLink
-          href="/finds"
+          href={siteLink("/finds")}
           label={t("Finds")}
           active={pathname.startsWith("/finds")}
           leftSection={<i className="ra ra-diamond" />}
         />
         <NavLink
-          href="/daemon"
+          href={siteLink("/daemon")}
           label={t("Demons")}
           active={pathname.startsWith("/daemon")}
           leftSection={<i className="ra ra-tentacle" />}
         />
         <NavLink
-          href="/legends"
+          href={siteLink("/legends")}
           label={t("Legends")}
           active={pathname.startsWith("/legends")}
           leftSection={<i className="ra ra-scroll-unfurled" />}
         />
         <NavLink
-          href="/characters"
+          href={siteLink("/characters")}
           label={t("Player characters")}
           active={pathname.startsWith("/characters")}
           leftSection={<i className="ra ra-player" />}
         />
         <NavLink
-          href="/npc"
+          href={siteLink("/npc")}
           label={t("Master characters")}
           active={pathname.startsWith("/npc")}
           leftSection={<i className="ra ra-player-king" />}

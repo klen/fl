@@ -126,11 +126,10 @@ export class Character extends Item {
     this.age = kin.type == "elf" ? "adult" : ageRoll <= 2 ? "young" : ageRoll <= 5 ? "adult" : "old"
     this.talents = {
       [kin.talent]: 1,
-      [`Path of ${
-        this.profession == "Sorcerer"
-          ? selectFromTable(characterTalentSorcerer, this.rollDice("d8")).name
-          : selectFromTable(characterTalent, this.rollDice("d6"))[this.profession]
-      }`]: this.age == "young" ? 1 : 2,
+      [`Path of ${this.profession == "Sorcerer"
+        ? selectFromTable(characterTalentSorcerer, this.rollDice("d8")).name
+        : selectFromTable(characterTalent, this.rollDice("d6"))[this.profession]
+        }`]: this.age == "young" ? 1 : 2,
       [event.talent]: this.age == "old" ? 2 : 1,
     }
 
@@ -157,7 +156,8 @@ export class Character extends Item {
   increaseSkill() {
     const skills = Object.keys(this.skills) as (keyof TSkills)[]
     while (true) {
-      const skill = skills[this.randomFromRange([0, skills.length - 1])]
+      const num = this.randomFromRange([0, skills.length])
+      const skill = skills[num]
       if (this.skills[skill] < 3) {
         this.skills[skill] = this.skills[skill] + 1
         break
