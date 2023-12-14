@@ -98,7 +98,7 @@ export function Shell({ children }: PropsWithChildren) {
         <NavLink
           href={siteLink("/")}
           label={t("About")}
-          active={pathname == siteLink("/")}
+          active={pathname == siteLink("/", false)}
           leftSection={<i className="ra ra-skull" />}
         />
       </AppShellNavbar>
