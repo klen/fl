@@ -1,5 +1,5 @@
-import { isDev } from "./env";
+import { assetPrefix, isDev } from "./env"
 
 export function siteLink(path: string) {
-  return isDev ? path : `/fl/${path}.html`
+  return isDev ? path : `${assetPrefix}/${path}.html`
 }

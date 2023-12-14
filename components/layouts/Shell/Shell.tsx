@@ -2,6 +2,7 @@
 
 import { Favorites } from "@/components/Favorites"
 import { useStorage } from "@/utils"
+import { siteLink } from "@/utils/links"
 import {
   AppShell,
   AppShellHeader,
@@ -22,7 +23,6 @@ import { usePathname } from "next/navigation"
 import { PropsWithChildren } from "react"
 import { useTranslation } from "react-i18next"
 import ClientSide from "../ClientSide"
-import { siteLink } from "@/utils/links"
 
 export function Shell({ children }: PropsWithChildren) {
   const pathname = usePathname()
@@ -96,9 +96,9 @@ export function Shell({ children }: PropsWithChildren) {
           <FavoritesLink />
         </ClientSide>
         <NavLink
-          href="/"
+          href={siteLink("/")}
           label={t("About")}
-          active={pathname == "/"}
+          active={pathname == siteLink("/")}
           leftSection={<i className="ra ra-skull" />}
         />
       </AppShellNavbar>

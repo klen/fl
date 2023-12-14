@@ -7,7 +7,6 @@ const nextConfig = {
   swcMinify: true,
   output: 'export',
   assetPrefix: isProd ? 'https://klen.github.io/fl/' : undefined,
-  // output: 'standalone',
 };
 
 export default nextConfig;
