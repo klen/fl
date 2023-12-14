@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter&display=swap');
 
 body {
-  line-height: 1.5;
-  background: #fff url('/bg/fl-map_en.png') center center repeat-y;
+  background: #fff center center repeat-y;
   background-size: cover;
+
   &:before {
     content: '';
     position: fixed;
@@ -11,4 +11,5 @@ body {
     background: rgba(255, 255, 255, 0.7);
     z-index: -1;
   }
+
 }

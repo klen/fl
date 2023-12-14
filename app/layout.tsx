@@ -1,11 +1,14 @@
+import "@mantine/core/styles.css"
+import "styles/global.css"
+import "styles/rpg-awesome.css"
+
 import { Shell } from "@/components/layouts/Shell"
 import { yandex } from "@/utils/vendor/yandex"
 import { ColorSchemeScript, MantineProvider } from "@mantine/core"
-import "@mantine/core/styles.css"
 import { Metadata } from "next"
-import "styles/global.css"
-import "styles/rpg-awesome.css"
 import { theme } from "../theme"
+
+import src from "@/public/bg/fl-map_en.png"
 
 export const metadata: Metadata = {
   title: "Запретные земли",
@@ -39,7 +42,11 @@ export default function RootLayout({ children }: { children: any }) {
         />
         <script dangerouslySetInnerHTML={{ __html: yandex }} />
       </head>
-      <body>
+      <body
+        style={{
+          backgroundImage: `url(${src.src})`,
+        }}
+      >
         <MantineProvider theme={theme}>
           <Shell>{children}</Shell>
         </MantineProvider>

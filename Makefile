@@ -24,7 +24,7 @@ build: node_modules
 
 .PHONY: serve
 serve:
-	python -m http.server 8080 --directory out
+	python -m http.server 8000 --directory out
 
 #  Bump version
 #  ------------
