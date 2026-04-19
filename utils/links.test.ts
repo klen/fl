@@ -7,10 +7,10 @@ describe("links", () => {
 
   it("should modify path", () => {
     const path = "/test"
-    expect(siteLink(path)).toBe("https://klen.github.io/fl/test.html")
+    expect(siteLink(path)).toBe("/test.html")
   })
 
   it("base path should be ok", () => {
-    expect(siteLink("/", false)).toBe("https://klen.github.io/fl/")
+    expect(siteLink("/", false)).toBe("/")
   })
 })
